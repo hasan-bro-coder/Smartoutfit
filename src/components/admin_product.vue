@@ -35,7 +35,7 @@
       <button>OK</button>
     </form>
   </dialog>
-    <dialog class="edit">
+  <dialog class="edit">
     <form @submit.prevent="editor(this)" method="dialog">
       <div>
         <label for="name">name</label>
@@ -73,6 +73,7 @@
       class="product"
       v-for="product in products"
       :key="product._id"
+      @click="send(product._id)"
       data-aos="fade-up"
       data-aos-delay="100"
     >
@@ -131,24 +132,24 @@ export default {
     };
   },
   methods: {
+    send(id) {
+      window.location.pathname = "/product/" + id;
+    },
     async refresh() {
       this.products = await this.request(server + "/search/all", "GET");
     },
-    async edit(id){
-      this.id = id
-      this.form = await this.request(
-        server + "/product/" + id || "",
-      "GET"
-    );
-        document.querySelector("dialog.edit").showModal();
+    async edit(id) {
+      this.id = id;
+      this.form = await this.request(server + "/product/" + id || "", "GET");
+      document.querySelector("dialog.edit").showModal();
     },
-    async editor(){
-      let that = this
+    async editor() {
+      let that = this;
       let form = Object.fromEntries(
         new FormData(document.querySelector("dialog.edit form")).entries()
       );
       console.log(form);
-        document.querySelector("dialog.edit").close();
+      document.querySelector("dialog.edit").close();
       await this.request(server + "/admin", "PATCH", {
         id: that.id,
         data: form,
