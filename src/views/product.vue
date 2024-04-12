@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="left" data-aos="fade-up">
-      <div class="img"></div>
+        <img src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
     </div>
 
     <div class="right" data-aos="fade-up" data-aos-delay="100">
@@ -36,8 +36,8 @@ export default {
       window.location.pathname = "/order/" + id;
     },
     addtocart(id){
-      let cart = localStorage.getItem("fav") || []
-      cart.push(id)
+      let cart = JSON.parse(localStorage.getItem("fav")) || []
+      !cart.has(id) ? cart.push(id) : ""
       localStorage.setItem("fav",JSON.stringify(cart))
     }
   },
@@ -71,11 +71,12 @@ export default {
     width: 50%;
     height: 80vh;
     padding: 40px;
-    .img {
-      background-color: rgb(54, 54, 54);
+    img {
+      background-color: rgba(54, 54, 54, 0);
       width: 100%;
       height: 100%;
       border-radius: 12px;
+      object-fit: contain;
     }
   }
   .right {
@@ -127,6 +128,9 @@ export default {
     }
   }
 }
+// .other{
+//   height: 300px;
+// }
 @media (max-width: 730px) {
   .main {
     flex-direction: column;

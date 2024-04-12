@@ -73,7 +73,7 @@
       class="product"
       v-for="product in products"
       :key="product._id"
-      @click="send(product._id)"
+      @click.self="send(product._id)"
       data-aos="fade-up"
       data-aos-delay="100"
     >
