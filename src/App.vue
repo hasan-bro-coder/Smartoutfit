@@ -1,6 +1,7 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 import AOS from "aos";
+import gsap from "gsap";
 import "aos/dist/aos.css";
 let closed = true;
 export default {
@@ -19,9 +20,12 @@ export default {
         document.querySelector(".sidebar").style.width =
           "clamp(350px,30vw,1000px)";
         document.querySelector(".sidebar").style.padding = "10px";
+        document.querySelector(".sidebar").style.outline = "1px white solid"
+
       } else {
         document.querySelector(".sidebar").style.width = "0px";
         document.querySelector(".sidebar").style.padding = "0px";
+        document.querySelector(".sidebar").style.outline = "1px transparent solid"
       }
       closed = !closed;
     },
@@ -49,12 +53,22 @@ export default {
       catch(e){console.log(e);}
     }
     this.cart = data;
-    this.havecart = data.length <= 0
+    this.havecart = data.length <= 0;
+    // document.body.onload = ()=>{
+      gsap.to(".loader", {
+      duration: 2,
+      clipPath: "circle(0% at 100% 100%)",
+      // ease: Power4.easeOut,
+    })
+    // }
   },
 };
 </script>
 
 <template>
+  <div class="loader">
+    <h1>Smart Outfit</h1>
+  </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
     <h1 v-if="havecart">Not Found</h1>
@@ -104,6 +118,18 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  clip-path: circle(100% at 50% 50%),
+}
 .sidebar {
   width: 0px ;
   height: calc(100vh - 60px);
@@ -113,7 +139,7 @@ export default {
   right: 0;
   z-index: 4;
   background-color: rgb(54, 54, 54);
-  outline: 1px white solid;
+  outline: 1px transparent solid;
   transition: 1s;
   display: flex;
   justify-content: flex-start;

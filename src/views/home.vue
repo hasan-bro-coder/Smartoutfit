@@ -5,16 +5,18 @@
     <div class="section">PRODUCT</div>
   </div>
   <Products></Products>
+  <Credits></Credits>
 </template>
 <script>
 import Products from "../components/products.vue"
+import Credits from "../components/credits.vue"
 
 import gsap from "gsap";
 
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default {
-  components: { Products },
+  components: { Products,Credits },
   async mounted() {
     gsap.registerPlugin(ScrollTrigger);
 

@@ -19,13 +19,15 @@
   </div>
   <div class="other"></div>
   <Products></Products>
+  <Credits></Credits>
 
 </template>
 <script>
 import Products from "../components/products.vue"
+import Credits from "../components/credits.vue"
 
 export default {
-  components:{Products},
+  components: { Products,Credits },
   data() {
     return {
       data: "",
@@ -37,7 +39,7 @@ export default {
     },
     addtocart(id){
       let cart = JSON.parse(localStorage.getItem("fav")) || []
-      !cart.has(id) ? cart.push(id) : ""
+      !cart.includes(id) ? cart.push(id) : ""
       localStorage.setItem("fav",JSON.stringify(cart))
     }
   },

@@ -2,11 +2,11 @@
     <div class="products">
     <div
       class="product"
-      v-for="product in products"
+      v-for="(product,index) in products"
       :key="product._id"
       @click="send(product._id)"
       data-aos="fade-up"
-      data-aos-delay="100"
+      :data-aos-delay="index < 30 ? (index) * 100 : 100"
     >
       <img
         src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -16,10 +16,9 @@
         <div class="price" @mouseleave="$event.target.innerText = `Tk `+product.price " @mouseover="$event.target.innerText = 'available: '+product.quantity ">Tk {{ product.price }}</div>
 
         <div class="btn-con">
-        <button class="cart">checkout<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+        <button class="cart">checkout<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
         </div>
       </div>
-      <!-- {{product}} -->
     </div>
   </div>
 </template>
