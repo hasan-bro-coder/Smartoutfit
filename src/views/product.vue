@@ -25,6 +25,7 @@
 <script>
 import Products from "../components/products.vue"
 import Credits from "../components/credits.vue"
+import {store} from "../store";
 
 export default {
   components: { Products,Credits },
@@ -44,21 +45,12 @@ export default {
     }
   },
   async mounted() {
-    let server =
-      "https://db0b181b-728d-4acb-9abb-54d70a947b41-00-2t0pfo365rz6a.riker.replit.dev";
-    async function request(url, method) {
-      let json = await (
-        await fetch(url, {
-          method,
-        })
-      ).json();
-      console.log(json);
-      return json;
-    }
-    this.data = await request(
-      server + "/product/" + this.$route.params.id || "",
-      "GET"
-    );
+    let { data, error } = await store.supabase
+        .from('products')
+        .select('*')
+        .eq('_id', this.$route.params.id)
+        console.log(data);
+    this.data = data[0]
   },
 };
 </script>

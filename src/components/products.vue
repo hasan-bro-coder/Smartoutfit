@@ -8,9 +8,9 @@
       data-aos="fade-up"
       :data-aos-delay="index < 30 ? (index) * 100 : 100"
     >
+    <!-- src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" -->
+    <!-- alt="nai" -->
       <img
-        src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="nai"
       />
       <div class="bottom">
         <div class="price" @mouseleave="$event.target.innerText = `Tk `+product.price " @mouseover="$event.target.innerText = 'available: '+product.quantity ">Tk {{ product.price }}</div>
@@ -23,6 +23,8 @@
   </div>
 </template>
 <script>
+import {store} from "../store";
+
 export default {
   data() {
     return {
@@ -35,18 +37,12 @@ export default {
     }
   },
   async mounted() {
-    let server =
-      "https://db0b181b-728d-4acb-9abb-54d70a947b41-00-2t0pfo365rz6a.riker.replit.dev";
-    async function request(url, method) {
-      let json = await (
-        await fetch(url, {
-          method,
-        })
-      ).json();
-      console.log(json);
-      return json;
-    }
-    this.products = await request(server + "/search/all", "GET");
+    
+    let { data, error } = await store.supabase
+        .from('products')
+        .select('*')
+
+    this.products = data
   },
 };
 </script>

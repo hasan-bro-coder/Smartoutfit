@@ -9,7 +9,7 @@
 <script>
 export default {
      methods: {
-    send(id) {
+    send(id){
       window.location.pathname = id;
     }
   },

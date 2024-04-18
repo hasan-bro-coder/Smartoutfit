@@ -1,8 +1,8 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 import AOS from "aos";
-import gsap from "gsap";
 import "aos/dist/aos.css";
+import {store} from "./store";
 let closed = true;
 export default {
   data() {
@@ -32,43 +32,31 @@ export default {
   },
   async mounted() {
     AOS.init();
-    let server =
-      "https://db0b181b-728d-4acb-9abb-54d70a947b41-00-2t0pfo365rz6a.riker.replit.dev";
-    async function request(url, method) {
-      let json = await (
-        await fetch(url, {
-          method,
-        })
-      ).json();
-      console.log(json);
-      return json;
-    }
+
     let data = [];
     let cart = JSON.parse(localStorage.getItem("fav") || "[]");
     for (let id = 0; id < cart.length; id++) {
       const element = cart[id];
-      try{
-        data.push(await request(server + "/product/" + element, "GET"));
+      try {
+        let { data, error } = await store.supabase
+        .from('products')
+        .select('*')
+        .eq('_id', element)
+          
+        data.push(data[0]);
       }
-      catch(e){console.log(e);}
+      catch (e) { console.log(e); }
     }
     this.cart = data;
     this.havecart = data.length <= 0;
-    // document.body.onload = ()=>{
-      gsap.to(".loader", {
-      duration: 2,
-      clipPath: "circle(0% at 100% 100%)",
-      // ease: Power4.easeOut,
-    })
-    // }
   },
 };
 </script>
 
 <template>
-  <div class="loader">
+  <!-- <div class="loader">
     <h1>Smart Outfit</h1>
-  </div>
+  </div> -->
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
     <h1 v-if="havecart">Not Found</h1>
@@ -78,14 +66,10 @@ export default {
     </div>
   </div>
   <nav>
-    <div
-      class="social"
-      v-if="
-        this.$route.path == '/admin' ||
-        this.$route.path == '/admin/orders' ||
-        this.$route.path == '/admin/products'
-      "
-    >
+    <div class="social" v-if="this.$route.path == '/admin' ||
+      this.$route.path == '/admin/orders' ||
+      this.$route.path == '/admin/products'
+      ">
       <RouterLink to="/admin/products">products</RouterLink>
       <RouterLink to="/admin/orders">orders</RouterLink>
     </div>
@@ -104,8 +88,7 @@ export default {
           License - https://fontawesome.com/license/free Copyright 2024
           Fonticons, Inc.
           <path
-            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
-          />
+            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
         </svg>
       </button>
       <!-- <button class="fav">favourite</button> -->
@@ -118,7 +101,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.loader{
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,8 +113,9 @@ export default {
   color: white;
   clip-path: circle(100% at 50% 50%),
 }
+
 .sidebar {
-  width: 0px ;
+  width: 0px;
   height: calc(100vh - 60px);
   position: fixed;
   top: 60px;
@@ -148,6 +132,7 @@ export default {
   padding: 0px;
   gap: 10px;
   overflow-x: hidden;
+
   .prod {
     background-color: rgba(0, 0, 0, 0.293);
     border-radius: 8px;
@@ -156,9 +141,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10px
+    gap: 10px
   }
 }
+
 nav {
   // top: 0;
   // z-index: 3;
@@ -171,15 +157,18 @@ nav {
   padding: 20px;
   gap: 30px;
   background-color: transparent;
+
   .logo {
     min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     h1 {
       font-size: calc(20px * 1.618);
     }
   }
+
   .links {
     width: 350px;
     gap: 40px;
@@ -187,6 +176,7 @@ nav {
     justify-content: center;
     align-items: center;
   }
+
   .social {
     width: 350px;
     display: flex;
@@ -194,12 +184,14 @@ nav {
     gap: 30px;
     align-items: center;
   }
+
   .buttons {
     width: 350px;
     display: flex;
     justify-content: flex-end;
     gap: 30px;
     align-items: center;
+
     button {
       width: 70px;
       height: 50px;
@@ -212,12 +204,14 @@ nav {
       color: white;
       transition: 1s;
       fill: rgb(255, 255, 255);
+
       &:hover {
         border: 1px white solid;
         background-color: white;
         color: black;
         fill: black;
       }
+
       svg {
         width: 30px;
         height: 30px;
@@ -226,10 +220,12 @@ nav {
     }
   }
 }
+
 @media (max-width: 730px) {
   .social {
     display: none !important;
   }
+
   .links {
     gap: 20px !important;
     justify-content: center !important;

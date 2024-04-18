@@ -17,20 +17,16 @@
         <input name="quantity" type="number" :value="form.quantity" />
       </div>
       <div>
+        <label for="image">uploade image</label>
+        <input name="image" type="file" />
+      </div>
+      <div>
         <label for="description">description</label>
-        <textarea
-          name="description"
-          type="number"
-          :value="form.description"
-        ></textarea>
+        <textarea name="description" type="number" :value="form.description"></textarea>
       </div>
       <div>
         <label for="category">category</label>
-        <textarea
-          name="category"
-          type="number"
-          :value="form.category"
-        ></textarea>
+        <textarea name="category" type="number" :value="form.category"></textarea>
       </div>
       <button>OK</button>
     </form>
@@ -50,62 +46,41 @@
         <input name="quantity" type="number" :value="form.quantity" />
       </div>
       <div>
+        <label for="image">uploade image</label>
+        <input name="image" type="file" />
+      </div>
+      <div>
         <label for="description">description</label>
-        <textarea
-          name="description"
-          type="number"
-          :value="form.description"
-        ></textarea>
+        <textarea name="description" type="number" :value="form.description"></textarea>
       </div>
       <div>
         <label for="category">category</label>
-        <textarea
-          name="category"
-          type="number"
-          :value="form.category"
-        ></textarea>
+        <textarea name="category" type="number" :value="form.category"></textarea>
       </div>
       <button>OK</button>
     </form>
   </dialog>
   <div class="products">
-    <div
-      class="product"
-      v-for="product in products"
-      :key="product._id"
-      @click.self="send(product._id)"
-      data-aos="fade-up"
-      data-aos-delay="100"
-    >
-      <img
-        src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="nai"
-      />
+    <div class="product" v-for="product in products" :key="product._id" @click.self="send(product._id)"
+      data-aos="fade-up" data-aos-delay="100">
+      <img @click.self="send(product._id)"
+        :src="product.image || 'https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
+        alt="nai" />
       <div class="bottom">
-        <div
-          class="price"
-          @mouseleave="$event.target.innerText = `Tk ` + product.price"
-          @mouseover="
-            $event.target.innerText = 'available: ' + product.quantity
-          "
-        >
+        <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price" @mouseover="
+      $event.target.innerText = 'available: ' + product.quantity
+      ">
           Tk {{ product.price }}
         </div>
 
         <div class="btn-con">
           <button class="cart" @click="edit(product._id)">
             edit<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path
-                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
-              />
+                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
             </svg>
           </button>
-          <button
-            class="delet"
-            @click="delet(product._id)"
-            style="color: red; border-color: red"
-          >
+          <button class="delet" @click="delet(product._id)" style="color: red; border-color: red">
             delete
           </button>
         </div>
@@ -115,8 +90,8 @@
   </div>
 </template>
 <script>
-let server =
-  "https://db0b181b-728d-4acb-9abb-54d70a947b41-00-2t0pfo365rz6a.riker.replit.dev";
+import { store } from "../store";
+
 export default {
   data() {
     return {
@@ -136,11 +111,18 @@ export default {
       window.location.pathname = "/product/" + id;
     },
     async refresh() {
-      this.products = await this.request(server + "/search/all", "GET");
+      let { data, error } = await store.supabase
+        .from('products')
+        .select('*')
+      this.products = data
     },
     async edit(id) {
       this.id = id;
-      this.form = await this.request(server + "/product/" + id || "", "GET");
+      let { data, error } = await store.supabase
+        .from('products')
+        .select('*')
+        .eq('_id', id)
+      this.form = data;
       document.querySelector("dialog.edit").showModal();
     },
     async editor() {
@@ -148,27 +130,26 @@ export default {
       let form = Object.fromEntries(
         new FormData(document.querySelector("dialog.edit form")).entries()
       );
-      console.log(form);
+      async function FileToDataURL(blob, callback) {
+        var a = new FileReader();
+        a.onload = function (e) { form.image = e.target.result; callback(form); }
+        a.readAsDataURL(blob.image);
+      }
       document.querySelector("dialog.edit").close();
-      await this.request(server + "/admin", "PATCH", {
-        id: that.id,
-        data: form,
-      });
-      this.refresh();
+      FileToDataURL(form, async (form) => {
+
+        console.log(form);
+
+        const { data, error } = await store.supabase
+          .from('products')
+          .update(form)
+          .eq('_id', that.id)
+          .select()
+
+        this.refresh();
+      })
     },
-    async request(url, method, body) {
-      let json = await (
-        await fetch(url, {
-          method,
-          body: JSON.stringify(body),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-      ).json();
-      console.log(json);
-      return json;
-    },
+
     show() {
       document.querySelector("dialog").showModal();
     },
@@ -177,16 +158,29 @@ export default {
         new FormData(document.querySelector("form")).entries()
       );
       console.log(form);
+      async function FileToDataURL(blob, callback) {
+        var a = new FileReader();
+        a.onload = function (e) { form.image = e.target.result; callback(form); }
+        a.readAsDataURL(blob.image);
+      }
       document.querySelector("dialog").close("");
-      await this.request(server + "/admin", "POST", {
-        data: form,
-      });
-      this.refresh();
+      FileToDataURL(form, async (form) => {
+
+        const { data, error } = await store.supabase
+          .from('products')
+          .insert(
+            form
+          )
+          .select()
+
+        this.refresh();
+      })
     },
     async delet(id) {
-      await this.request(server + "/admin", "DELETE", {
-        id,
-      });
+      await store.supabase
+        .from('products')
+        .delete()
+        .eq('_id', id)
       this.refresh();
     },
   },
@@ -207,6 +201,7 @@ dialog {
   background-color: rgb(46, 46, 46);
   color: white;
   border: 1px white solid;
+
   form {
     width: 300px;
     display: flex;
@@ -214,30 +209,40 @@ dialog {
     justify-content: center;
     align-items: center;
     gap: 20px;
+
     div {
       gap: 5px;
       width: 200px;
       display: flex;
       flex-direction: column;
+
       input {
         color: black;
+        height: 28px;
+      }
+
+      input[type="file"] {
+        color: rgb(255, 255, 255);
         height: 28px;
       }
     }
   }
 }
+
 .btns {
   width: 100vw;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+
   button {
     border-radius: 6px;
     padding: 15px;
     background: rgba(0, 0, 0, 0);
     color: rgb(255, 255, 255);
     border: 1px rgb(255, 255, 255) solid;
+
     &:hover {
       border: 1px white solid;
       background-color: white;
@@ -245,6 +250,7 @@ dialog {
     }
   }
 }
+
 .products {
   display: grid;
   // width: 50vw;
@@ -253,6 +259,7 @@ dialog {
   //    place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 400px;
+
   .product {
     background-color: rgb(54, 54, 54);
     color: white;
@@ -261,12 +268,14 @@ dialog {
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
+
     img {
       object-fit: cover;
       width: 100%;
       min-height: 250px;
       // height:85%
     }
+
     .bottom {
       width: 100%;
       min-height: 100px;
@@ -275,17 +284,20 @@ dialog {
       align-items: center;
       flex-direction: column;
       padding: 5px 5px;
+
       .price,
       .quantity {
         font-size: 20px;
         font-weight: 500;
         text-align: center;
       }
+
       .btn-con {
         width: 100%;
         display: flex;
         gap: 10px;
       }
+
       .delet {
         height: 50px;
         width: 100%;
@@ -297,18 +309,21 @@ dialog {
         display: flex;
         justify-content: center;
         align-items: center;
+
         &:hover {
           border: 1px rgba(255, 0, 0, 0) solid;
           color: rgb(255, 255, 255) !important;
           background-color: rgb(255, 0, 0);
           fill: rgb(255, 255, 255);
         }
+
         svg {
           fill: white;
           width: 20px;
           height: 10px;
         }
       }
+
       .cart {
         width: 100%;
         display: flex;
@@ -320,14 +335,17 @@ dialog {
         background-color: rgba(255, 255, 255, 0);
         color: white;
         transition: 1s;
+
         &:hover {
           border: 1px white solid;
           background-color: white;
           color: black;
         }
+
         &:hover svg {
           fill: black;
         }
+
         svg {
           fill: white;
           width: 20px;
@@ -335,9 +353,11 @@ dialog {
         }
       }
     }
+
     // aspect-ratio: 1/1;
   }
 }
+
 @media (max-width: 750px) {
   .products {
     display: grid;
@@ -349,6 +369,7 @@ dialog {
     grid-auto-rows: 400px;
   }
 }
+
 @media (max-width: 450px) {
   .products {
     display: grid;
