@@ -131,6 +131,7 @@ export default {
       let form = Object.fromEntries(
         new FormData(document.querySelector("dialog.edit form")).entries()
       );
+      console.log(form);
       if(form.hasOwnProperty('image') && form.image == ""){
         delete form.image
         const { data, error } = await store.supabase
@@ -150,7 +151,6 @@ export default {
       document.querySelector("dialog.edit").close();
       FileToDataURL(form, async (form) => {
 
-        console.log(form);
 
         const { data, error } = await store.supabase
           .from('products')
