@@ -122,6 +122,7 @@ export default {
         .from('products')
         .select('*')
         .eq('_id', id)
+      console.log(data);
       this.form = data;
       document.querySelector("dialog.edit").showModal();
     },
