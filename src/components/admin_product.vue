@@ -143,23 +143,23 @@ export default {
         this.refresh();
         return 0
       } // true
-      async function FileToDataURL(blob, callback) {
-        var a = new FileReader();
-        a.onload = function (e) { form.image = e.target.result; callback(form); }
-        a.readAsDataURL(blob.image);
-      }
-      document.querySelector("dialog.edit").close();
-      FileToDataURL(form, async (form) => {
+      // async function FileToDataURL(blob, callback) {
+      //   var a = new FileReader();
+      //   a.onload = function (e) { form.image = e.target.result; callback(form); }
+      //   a.readAsDataURL(blob.image);
+      // }
+      // document.querySelector("dialog.edit").close();
+      // FileToDataURL(form, async (form) => {
 
 
-        const { data, error } = await store.supabase
-          .from('products')
-          .update(form)
-          .eq('_id', that.id)
-          .select()
+      //   const { data, error } = await store.supabase
+      //     .from('products')
+      //     .update(form)
+      //     .eq('_id', that.id)
+      //     .select()
 
-        this.refresh();
-      })
+      //   this.refresh();
+      // })
     },
 
     show() {
