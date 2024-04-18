@@ -1,6 +1,5 @@
 #!/bin/bash
 
-@echo off  
 num=1      
 while [ condition ]; do
     git add .
