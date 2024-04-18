@@ -123,7 +123,7 @@ export default {
         .select('*')
         .eq('_id', id)
       console.log(data);
-      this.form = data;
+      this.form = data[0];
       document.querySelector("dialog.edit").showModal();
     },
     async editor() {
@@ -132,6 +132,7 @@ export default {
         new FormData(document.querySelector("dialog.edit form")).entries()
       );
       async function FileToDataURL(blob, callback) {
+        if(blob)
         var a = new FileReader();
         a.onload = function (e) { form.image = e.target.result; callback(form); }
         a.readAsDataURL(blob.image);
