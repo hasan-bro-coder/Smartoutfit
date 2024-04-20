@@ -34,12 +34,11 @@ export default {
     let cart = JSON.parse(localStorage.getItem("fav") || "[]");
     console.log(cart);
     for (let id = 0; id <= cart.length; id++) {
-      const element = cart[id];
       try {
         let {data,error} = await store.supabase
         .from('products')
         .select('*')
-        .eq('_id', String(element))
+        .eq('_id', String(cart[id]))
         console.log(data,error);
         datas.push(data[0]);
       }
