@@ -8,7 +8,8 @@
       <h1 data-aos="fade-up" data-aos-delay="200">{{ data.name }}</h1>
       <h2 class="price" data-aos="fade-up" data-aos-delay="300">Tk {{ data.price }}</h2>
       <div class="quantity" data-aos="fade-up" data-aos-delay="400" v-if="data.quantity > 0">stock available: {{ data.quantity }}</div>
-      <div class="quantity" data-aos="fade-up" data-aos-delay="400" v-else style="color: red;">out of stock</div>
+      <div class="quantity" data-aos="fade-up" data-aos-delay="400" v-else style="color: red;
+      ">out of stock</div>
       <p class="description" data-aos="fade-up" data-aos-delay="500">
         {{ data.description }}
       </p>
