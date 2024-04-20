@@ -33,7 +33,7 @@ export default {
     let datas = [];
     let cart = JSON.parse(localStorage.getItem("fav") || "[]");
     console.log(cart);
-    for (let id = 0; id <= cart.length; id++) {
+    for (let id = 0; id < cart.length; id++) {
       try {
         let {data,error} = await store.supabase
         .from('products')
