@@ -7,7 +7,7 @@
     <div class="right" data-aos="fade-up" data-aos-delay="100">
       <h1 data-aos="fade-up" data-aos-delay="200">{{ data.name }}</h1>
       <h2 class="price" data-aos="fade-up" data-aos-delay="300">Tk {{ data.price }}</h2>
-      <div class="quantity" data-aos="fade-up" data-aos-delay="400">stock available: {{ data.quantity }}</div>
+      <div class="quantity" data-aos="fade-up" data-aos-delay="400" v-if="data.quantity">stock available: {{ data.quantity }}</div>
       <p class="description" data-aos="fade-up" data-aos-delay="500">
         {{ data.description }}
       </p>
