@@ -40,7 +40,7 @@ export default {
         .from('products')
         .select('*')
         .eq('_id', String(element))
-          
+          console.log(data);
         data.push(data[0]);
       }
       catch (e) { console.log(e); }
