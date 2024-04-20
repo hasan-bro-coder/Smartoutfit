@@ -35,6 +35,7 @@ export default {
 
     let data = [];
     let cart = JSON.parse(localStorage.getItem("fav") || "[]");
+    console.log(cart);
     for (let id = 0; id < cart.length; id++) {
       const element = cart[id];
       try {
