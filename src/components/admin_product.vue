@@ -45,10 +45,10 @@
         <label for="quantity">quantity</label>
         <input name="quantity" type="number" :value="form.quantity" />
       </div>
-      <div>
-        <label for="image">uploade image</label>
-        <input name="image" type="file" />
-      </div>
+      <!-- <div> -->
+        <!-- <label for="image">uploade image</label> -->
+        <!-- <input name="image" type="file" /> -->
+      <!-- </div> -->
       <div>
         <label for="description">description</label>
         <textarea name="description" type="number" :value="form.description"></textarea>
@@ -65,7 +65,7 @@
       data-aos="fade-up" data-aos-delay="100">
       <img @click.self="send(product._id)"
         :src="product.image || 'https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
-        alt="nai" />
+        alt="image not found" />
       <div class="bottom">
         <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price" @mouseover="
       $event.target.innerText = 'available: ' + product.quantity
@@ -132,6 +132,7 @@ export default {
         new FormData(document.querySelector("dialog.edit form")).entries()
       );
       console.log(form);
+      document.querySelector("dialog.edit").close();
       if(form.hasOwnProperty('image') && form.image == ""){
         delete form.image
         const { data, error } = await store.supabase
@@ -148,7 +149,6 @@ export default {
       //   a.onload = function (e) { form.image = e.target.result; callback(form); }
       //   a.readAsDataURL(blob.image);
       // }
-      // document.querySelector("dialog.edit").close();
       // FileToDataURL(form, async (form) => {
 
 
@@ -203,7 +203,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 dialog {
   top: 50%;
   left: 50%;
@@ -269,7 +269,7 @@ dialog {
   gap: 30px;
   margin: 0px 100px;
   //    place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: 400px;
 
   .product {

@@ -41,7 +41,7 @@ export default {
         let { data, error } = await store.supabase
         .from('products')
         .select('*')
-        .eq('_id', element)
+        .eq('_id', String(element))
           
         data.push(data[0]);
       }
@@ -66,18 +66,22 @@ export default {
     </div>
   </div>
   <nav>
-    <div class="social" v-if="this.$route.path == '/admin' ||
+    <div class="social" >
+      <span v-if="this.$route.path == '/admin' ||
       this.$route.path == '/admin/orders' ||
       this.$route.path == '/admin/products'
       ">
-      <RouterLink to="/admin/products">products</RouterLink>
-      <RouterLink to="/admin/orders">orders</RouterLink>
+        <RouterLink to="/admin/products">products</RouterLink>
+        <RouterLink to="/admin/orders">orders</RouterLink>
+      </span>
+      <RouterLink to="/" v-if="this.$route.path.includes('/product')
+      ">home</RouterLink>
     </div>
-    <div class="links" v-else>
+    <!-- <div class="links" v-else> -->
       <!-- <a href="">Home</a>
     <a href="">about us</a>
     <a href="">contact us</a> -->
-    </div>
+    <!-- </div> -->
     <div class="logo">
       <h1>Smart Outfit</h1>
     </div>

@@ -47,6 +47,10 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+   
+    --radial-gradient-background: 255, 255, 255;
+    --solid-color-background: 15, 15, 15;
+    --overlay-color: 255, 255, 255;
   }
 
 
@@ -59,7 +63,14 @@
   scrollbar-width: thin;
   text-transform: capitalize;
 }
-
+.radial-gradient {
+  background: radial-gradient(
+          circle at 50% 0%,
+          rgba(var(--radial-gradient-background), 0.05) 0%,
+          transparent 60%
+      )
+      rgba(255, 255, 255, 0);
+}
 body {
   overflow-x: hidden;
   min-height: 100vh;

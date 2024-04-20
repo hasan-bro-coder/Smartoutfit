@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="left" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <img :src="data.image" alt="image not found">
     </div>
 
     <div class="right" data-aos="fade-up" data-aos-delay="100">
@@ -12,8 +12,8 @@
         {{ data.description }}
       </p>
       <div class="btn-con">
-        <button class="order" @click="order(data._id)">order in one click</button>
-        <button class="cart" @click="addtocart(data._id)">add to cart</button>
+        <button class="order radial-gradient" @click="order(data._id)">order in one click</button>
+        <button class="cart radial-gradient" @click="addtocart(data._id)">add to cart</button>
       </div>
     </div>
   </div>
@@ -23,8 +23,8 @@
 
 </template>
 <script>
-import Products from "../components/products.vue"
-import Credits from "../components/credits.vue"
+import Products from "../components/products.vue";
+import Credits from "../components/credits.vue";
 import {store} from "../store";
 
 export default {
@@ -56,7 +56,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main {
-  width: 100vw;
+  min-width: 100vw;
   height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
@@ -71,6 +71,7 @@ export default {
       height: 100%;
       border-radius: 12px;
       object-fit: contain;
+      transition: 1s;
     }
   }
   .right {
@@ -96,7 +97,7 @@ export default {
         min-width: 200px;
         height: 40px;
         border: 1px white solid;
-        background-color: rgba(255, 255, 255, 0);
+        // background-color: rgba(255, 255, 255, 0); 
         color: white;
         transition: 1s;
         &:hover {
@@ -110,7 +111,7 @@ export default {
         min-width: 200px;
         height: 40px;
         border: 1px white solid;
-        background-color: rgba(255, 255, 255, 0);
+        // background-color: rgba(255, 255, 255, 0);
         color: white;
         transition: 1s;
         &:hover {
@@ -128,6 +129,7 @@ export default {
 @media (max-width: 730px) {
   .main {
     flex-direction: column;
+    height: 100%;
     .right,
     .left {
       width: 80%;
