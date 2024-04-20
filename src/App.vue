@@ -30,22 +30,23 @@ export default {
       closed = !closed;
     },
     async update(){
-    let data = [];
+    let datas = [];
     let cart = JSON.parse(localStorage.getItem("fav") || "[]");
     console.log(cart);
     for (let id = 0; id <= cart.length; id++) {
       const element = cart[id];
       try {
-        let el = await store.supabase
+        let {data,error} = await store.supabase
         .from('products')
         .select('*')
         .eq('_id', element)
-        data.push(el.data[0]);
+        console.log(data,error);
+        datas.push(data[0]);
       }
       catch (e) { console.log(e); }
     }
-    this.cart = data;
-    this.havecart = data.length <= 0;
+    this.cart = datas;
+    this.havecart = datas.length <= 0;
     }
   },
   async mounted() {
