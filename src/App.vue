@@ -29,7 +29,7 @@ export default {
       }
       closed = !closed;
     },
-    async cart(){
+    async update(){
     let data = [];
     let cart = JSON.parse(localStorage.getItem("fav") || "[]");
     console.log(cart);
@@ -51,7 +51,7 @@ export default {
   },
   async mounted() {
     AOS.init();
-
+    this.update()
     
   },
 };
