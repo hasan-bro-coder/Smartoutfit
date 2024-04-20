@@ -39,7 +39,7 @@ export default {
         let {data,error} = await store.supabase
         .from('products')
         .select('*')
-        .eq('_id', element)
+        .eq('_id', String(element))
         console.log(data,error);
         datas.push(data[0]);
       }
