@@ -4,15 +4,14 @@
       <img :src="data.image" alt="" class="img">
     </div>
 
-    <div class="right" data-aos="fade-up" data-aos-delay="100">
-      <h1 data-aos="fade-up" data-aos-delay="200">{{ data.name }}</h1>
-      <h2 class="price" data-aos="fade-up" data-aos-delay="300">Tk {{ data.price }}</h2>
+    <div class="right" >
+      <h1  >{{ data.name }}</h1>
+      <h2 class="price">Tk {{ data.price }}</h2>
       <div class="btn-con">
         <button class="order" @click="order(data._id)">confirm order</button>
       </div>
     </div>
   </div>
-    <button>order</button>
 </template>
 <script>
 import {store} from "../store"
@@ -45,11 +44,11 @@ export default {
     height: 80vh;
     padding-bottom: 30px;
     .img {
-      background-color: rgb(54, 54, 54);
+      background-color: rgba(54, 54, 54, 0);
       width: 100%;
       height: 100%;
       border-radius: 12px;
-      
+      object-fit: contain;
     }
   }
   .right {
