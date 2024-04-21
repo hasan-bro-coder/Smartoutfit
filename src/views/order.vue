@@ -21,6 +21,11 @@ export default {
             data: {}
         }
     },
+    methods:{
+      order() {
+        
+      }
+    }
       async mounted() {
     
     let { data, error } = await store.supabase
@@ -41,7 +46,7 @@ export default {
   align-items: center;
   .left {
     width: 50%;
-    height: 80vh;
+    height: 60vh;
     padding-bottom: 30px;
     .img {
       background-color: rgba(54, 54, 54, 0);
