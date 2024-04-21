@@ -1,11 +1,11 @@
-<template >
-     <div class="main">
+<template>
+  <div class="main">
     <div class="left" data-aos="fade-up">
       <img :src="data.image" alt="" class="img">
     </div>
 
-    <div class="right" >
-      <h1  >{{ data.name }}</h1>
+    <div class="right">
+      <h1>{{ data.name }}</h1>
       <h2 class="price">Tk {{ data.price }}</h2>
       <div class="btn-con">
         <button class="order" @click="order(data._id)">confirm order</button>
@@ -14,24 +14,31 @@
   </div>
 </template>
 <script>
-import {store} from "../store"
+import { store } from "../store"
 export default {
-    data() {
-        return {
-            data: {}
-        }
-    },
-    methods:{
-      order() {
-        
-      }
+  data() {
+    return {
+      data: {}
     }
+  },
+  methods: {
+    async order() {
+
+      const { data, error } = await supabase
+        .from('orders')
+        .insert([
+          { : 'someValue', other_column: 'otherValue' },
+        ])
+        .select()
+
+    }
+  },
       async mounted() {
-    
+
     let { data, error } = await store.supabase
-        .from('products')
-        .select('*')
-        .eq('_id', this.$route.params.id)
+      .from('products')
+      .select('*')
+      .eq('_id', this.$route.params.id)
     this.data = data[0]
   },
 }
@@ -44,10 +51,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .left {
     width: 50%;
     height: 60vh;
     padding-bottom: 30px;
+
     .img {
       background-color: rgba(54, 54, 54, 0);
       width: 100%;
@@ -56,23 +65,29 @@ export default {
       object-fit: contain;
     }
   }
+
   .right {
     width: 50%;
     height: 80vh;
+
     .price {
       font-weight: 700;
     }
+
     .description {
       font-weight: 500;
     }
+
     .quantity {
       margin-top: 20px;
     }
+
     .btn-con {
       margin-top: 30px;
       display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 20px;
+
       .order {
         border-radius: 6px;
         min-width: 200px;
@@ -81,12 +96,14 @@ export default {
         background-color: rgba(255, 255, 255, 0);
         color: white;
         transition: 1s;
+
         &:hover {
           border: 1px white solid;
           background-color: white;
           color: black;
         }
       }
+
       .cart {
         border-radius: 6px;
         min-width: 200px;
@@ -95,6 +112,7 @@ export default {
         background-color: rgba(255, 255, 255, 0);
         color: white;
         transition: 1s;
+
         &:hover {
           border: 1px white solid;
           background-color: white;
@@ -104,9 +122,11 @@ export default {
     }
   }
 }
+
 @media (max-width: 730px) {
   .main {
     flex-direction: column;
+
     .right,
     .left {
       width: 80%;
