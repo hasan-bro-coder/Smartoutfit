@@ -68,7 +68,7 @@ export default {
         <h1>{{ prod.name }}</h1>
         <h2>Tk {{ prod.price }}</h2>
       </div>
-      <button>order</button>
+      <button @click="order()">order</button>
     </div>
   </div>
   <nav>
