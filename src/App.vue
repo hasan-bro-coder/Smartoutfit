@@ -63,9 +63,12 @@ export default {
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
     <h1 v-if="havecart">Not Found</h1>
-    <div class="prod" v-for="prod in cart" :key="prod.id" @click="send(prod._id)">
-      <h1>{{ prod.name }}</h1>
-      <h2>Tk {{ prod.price }}</h2>
+    <div>
+      <div class="prod" v-for="prod in cart" :key="prod.id" @click="send(prod._id)">
+        <h1>{{ prod.name }}</h1>
+        <h2>Tk {{ prod.price }}</h2>
+      </div>
+      <button>order</button>
     </div>
   </div>
   <nav>
