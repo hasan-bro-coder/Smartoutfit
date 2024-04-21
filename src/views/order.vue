@@ -1,7 +1,7 @@
 <template >
      <div class="main">
     <div class="left" data-aos="fade-up">
-      <div class="img"></div>
+      <img :src="data.image" alt="" class="img">
     </div>
 
     <div class="right" data-aos="fade-up" data-aos-delay="100">
@@ -15,6 +15,7 @@
     <button>order</button>
 </template>
 <script>
+import {store} from "../store"
 export default {
     data() {
         return {
@@ -48,6 +49,7 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 12px;
+      
     }
   }
   .right {
