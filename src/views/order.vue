@@ -22,12 +22,12 @@ export default {
     }
   },
   methods: {
-    async order() {
+    async order(id) {
 
       const { data, error } = await supabase
         .from('orders')
         .insert([
-          { : 'someValue', other_column: 'otherValue' },
+          { product_id: [id], other_column: 'otherValue' },
         ])
         .select()
 
