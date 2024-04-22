@@ -11,6 +11,9 @@
   </div>
   <div class="form">
     <form action="">
+      <div class="inpgrp">
+        <input type="text">
+      </div>
       <select>
     <option class="select2-results__option" id="select2-billing_state-result-wlvy-BD-05" role="option" data-selected="false"
         tabindex="-1">Bagerhat</option>
@@ -264,7 +267,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20%;
   form{
   width: 100%;
     height: 100%;
