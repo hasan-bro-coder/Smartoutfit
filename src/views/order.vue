@@ -12,7 +12,10 @@
   <div class="form">
     <form action="">
       <div class="inpgrp">
-        <input type="text">
+        <label for="firstname">firstname:</label>
+        <input name="firstname" type="text">
+        <label for="lastname">lastname:</label>
+        <input name="lastname" type="text">
       </div>
       <select>
     <option class="select2-results__option" id="select2-billing_state-result-wlvy-BD-05" role="option" data-selected="false"
