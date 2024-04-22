@@ -7,9 +7,6 @@
     <div class="right">
       <h1>{{ data.name }}</h1>
       <h2 class="price">Tk {{ data.price }}</h2>
-      <div class="btn-con">
-        <button class="order" @click="order(data._id)">confirm order</button>
-      </div>
     </div>
   </div>
   <div class="form">
@@ -257,7 +254,14 @@ export default {
     }
   }
 }
-
+.form{
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media (max-width: 730px) {
   .main {
     flex-direction: column;
