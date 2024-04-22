@@ -22,9 +22,13 @@
         </div>
       </div>
       <div class="con">
-          <label for="companyname">company name:</label>
-          <input name="companyname" type="text">
-        </div>
+        <label for="companyname">company name:</label>
+        <input name="companyname" type="text">
+      </div>
+      <div class="con">
+        <label for="streetaddress">company name:</label>
+        <input name="streetaddress" type="text">
+      </div>
       <select>
         <option class="select2-results__option" id="select2-billing_state-result-wlvy-BD-05" role="option"
           data-selected="false" tabindex="-1">Bagerhat</option>
@@ -280,6 +284,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 0px 20%;
+
   form {
     width: 100%;
     height: 100%;
@@ -288,15 +293,18 @@ export default {
     gap: 40px;
     justify-content: center;
     align-items: flex-start;
-    input{
-      height:40px;
-      width:100%;
-      font-family:monospace;
+
+    input {
+      height: 40px;
+      width: 100%;
+      font-family: monospace;
       font-size: 16px
     }
-    label{
+
+    label {
       text-transform: uppercase !important;
     }
+
     .con {
       display: flex;
       flex-direction: column;
