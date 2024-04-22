@@ -49,7 +49,7 @@ export default {
     background-color: rgb(78, 78, 78);
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-template-rows: 100px 200px 100px 250px;
+    grid-template-rows: repeat(auto-fit,minmax(100px,1fr));
     h1{
         font-size: clamp(18px,3vw,40px); 
        
