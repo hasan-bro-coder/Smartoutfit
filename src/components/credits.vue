@@ -34,7 +34,7 @@
             </ul>
         </div>
     </div>
-    <div class="bottom"></div>
+    <div class="bottom">fgdfgdfgfgdfg</div>
 </template>
 <script>
 export default {
@@ -54,6 +54,10 @@ export default {
     }
 }
 .bottom{
-    
+    width: 100vw;
+    background-color: rgb(253, 253, 253);
+    color: black;
+    text-align: center;
+    width: ;
 }
 </style>
