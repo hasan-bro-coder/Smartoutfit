@@ -31,7 +31,7 @@ export default {
 
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .grid{
     margin-top: 100px;
     height: 300px;
@@ -39,7 +39,8 @@ export default {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     h1{
-        font  
+        font-size: 40px; 
+        margin-bottom: 30px; 
     }
 }
 </style>
