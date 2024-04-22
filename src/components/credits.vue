@@ -49,14 +49,14 @@ export default {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     h1{
-        font-size: 40px; 
+        font-size: 3vw; 
         margin-bottom: 30px; 
     }
 }
 .bottom{
     width: 100vw;
-    background-color: rgb(0, 255, 85);
-    color: black;
+    background-color: #00bd7e;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
