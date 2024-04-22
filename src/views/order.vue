@@ -285,7 +285,7 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 40px;
     justify-content: center;
     align-items: flex-start;
     input{
