@@ -79,9 +79,9 @@ export default {
       ">
         <RouterLink to="/admin/products">products</RouterLink>
         <RouterLink to="/admin/orders">orders</RouterLink>
-      </span>
-      <RouterLink to="/" v-if="this.$route.path.includes('/product')
+        <RouterLink to="/" v-if="this.$route.path.includes('/product')
       ">home</RouterLink>
+      </span>
     </div>
     <!-- <div class="links" v-else> -->
       <!-- <a href="">Home</a>
