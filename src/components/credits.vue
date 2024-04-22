@@ -32,9 +32,10 @@ export default {
 }
 </script>
 <style scoped>
-div {
+.grid{
     margin-top: 100px;
     height: 300px;
     background-color: rgb(78, 78, 78);
+    display: grid;
 }
 </style>
