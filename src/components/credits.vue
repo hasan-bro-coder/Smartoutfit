@@ -2,7 +2,7 @@
     <div class="grid">
         <div class="col">
             <h1>smart outfit</h1>
-            <p>made by hasan</p>
+            <p>owned by dulavai</p>
         </div>
         <div class="col">
             <h1>contact us</h1>
@@ -14,7 +14,7 @@
         </div>
         <div class="col">
             <h1>quick links</h1>
-            <a href="">/admin</a>
+            <a href="/admin">admin page</a>
         </div>
         <div class="col">
             <h1>Social page</h1>
