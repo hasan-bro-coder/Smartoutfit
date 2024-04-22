@@ -285,7 +285,7 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 60px;
     justify-content: center;
     align-items: flex-start;
     input{
@@ -303,7 +303,7 @@ export default {
       gap: 10px;
       width: 100%;
       min-height: 74px;
-      height: 100%;
+      // height: 100%;
     }
 
     .inpgrp {
