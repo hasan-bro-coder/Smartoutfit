@@ -12,10 +12,15 @@
   <div class="form">
     <form action="">
       <div class="inpgrp">
-        <label for="firstname">firstname:</label>
-        <input name="firstname" type="text">
-        <label for="lastname">lastname:</label>
-        <input name="lastname" type="text">
+        <div class="con">
+          <label for="firstname">firstname:</label>
+          <input name="firstname" type="text">
+        </div>
+        <div class="con">
+
+          <label for="lastname">lastname:</label>
+          <input name="lastname" type="text">
+        </div>
       </div>
       <select>
     <option class="select2-results__option" id="select2-billing_state-result-wlvy-BD-05" role="option" data-selected="false"
@@ -279,6 +284,14 @@ export default {
   gap: 100px;
   justify-content: center;
   align-items: flex-start;
+  .con{
+    display: flex;
+  flex-direction: column;
+  gap: 10px;
+  }
+  .inpgrp{
+
+  }
   }
 }
 @media (max-width: 730px) {
