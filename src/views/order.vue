@@ -289,7 +289,7 @@ export default {
       height:40px;
       width:100%;
       font-family:monospace;
-      font-size: 12px
+      font-size: 16px
     }
     .con {
       display: flex;
