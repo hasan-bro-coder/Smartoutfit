@@ -1,4 +1,5 @@
 <template>
+    <optgroup>
     <li class="select2-results__option" id="select2-billing_state-result-wlvy-BD-05" role="option" data-selected="false"
         tabindex="-1">Bagerhat</li>
     <li class="select2-results__option" id="select2-billing_state-result-a08r-BD-01" role="option" data-selected="false"
@@ -128,6 +129,8 @@
         tabindex="-1">Tangail</li>
     <li class="select2-results__option" id="select2-billing_state-result-6yl9-BD-64" role="option" data-selected="false"
         tabindex="-1">Thakurgaon</li>
+    </optgroup>
+    
 </template>
 <script>
 export default {
