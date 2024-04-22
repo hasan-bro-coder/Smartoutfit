@@ -44,7 +44,7 @@ export default {
 <style scoped lang="scss">
 .grid{
     margin-top: 100px;
-    min-height: 500px;
+    min-height: 300px;
     gap:20px;
     background-color: rgb(78, 78, 78);
     display: grid;
