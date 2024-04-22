@@ -18,10 +18,14 @@
         </div>
         <div class="col">
             <h1>Social page</h1>
-            <a href="">facebook</a>
-            <a href="">insta</a>
-            <a href="">twitter</a>
-            <a href="">youtube</a>
+            <ul>
+                <li>
+                    
+                </li><a href="">facebook</a>
+                <a href="">insta</a>
+                <a href="">twitter</a>
+                <a href="">youtube</a>
+            </ul>
         </div>
     </div>
 
