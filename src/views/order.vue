@@ -285,7 +285,10 @@ export default {
     gap: 100px;
     justify-content: center;
     align-items: flex-start;
-
+    input{
+      height:40px;
+      width:100%
+    }
     .con {
       display: flex;
       flex-direction: column;
@@ -293,6 +296,7 @@ export default {
     }
 
     .inpgrp {
+      width: 100%;
       display: flex;
       gap: 10px;
     }
