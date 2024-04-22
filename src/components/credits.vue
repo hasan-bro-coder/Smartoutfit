@@ -7,7 +7,7 @@
         <div class="col">
             <h1>contact us</h1>
             <ul>
-                <li>1</li>
+                <li>hasanur23910@gmail.com</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
@@ -20,11 +20,17 @@
             <h1>Social page</h1>
             <ul>
                 <li>
-                    
-                </li><a href="">facebook</a>
-                <a href="">insta</a>
-                <a href="">twitter</a>
-                <a href="">youtube</a>
+                    <a href="">facebook</a>
+                </li>
+                <li>
+                    <a href="">twitter</a>
+                </li>
+                <li>
+                    <a href="">instagram</a>
+                </li>
+                <li>
+                    <a href="">youtube</a>
+                </li>
             </ul>
         </div>
     </div>
