@@ -55,9 +55,11 @@ export default {
 }
 .bottom{
     width: 100vw;
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(0, 255, 85);
     color: black;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 30px;
 }
 </style>
