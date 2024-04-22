@@ -279,7 +279,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20%;
+  padding: 0px 20%;
   form {
     width: 100%;
     height: 100%;
@@ -302,7 +302,8 @@ export default {
       flex-direction: column;
       gap: 10px;
       width: 100%;
-      height: 60px;
+      min-height: 74px;
+      height: 100%;
     }
 
     .inpgrp {
