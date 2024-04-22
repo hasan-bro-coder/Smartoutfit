@@ -34,7 +34,7 @@
             </ul>
         </div>
     </div>
-    <div class="bottom">fgdfgdfgfgdfg</div>
+    <div class="bottom">made by hasan</div>
 </template>
 <script>
 export default {
