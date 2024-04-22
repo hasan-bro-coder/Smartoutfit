@@ -26,7 +26,7 @@
         <input name="companyname" type="text">
       </div>
       <div class="con">
-        <label for="streetaddress">company name:</label>
+        <label for="streetaddress">Street address:</label>
         <input name="streetaddress" type="text">
       </div>
       <select>
