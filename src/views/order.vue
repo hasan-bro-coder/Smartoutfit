@@ -142,6 +142,9 @@
     <option class="select2-results__option" id="select2-billing_state-result-6yl9-BD-64" role="option" data-selected="false"
         tabindex="-1">Thakurgaon</option>
     </select>
+    <div class="btn-con">
+        <button class="order" @click="order(data._id)">confirm order</button>
+      </div>
     </form>
   </div>
 </template>
