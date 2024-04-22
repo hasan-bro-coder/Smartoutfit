@@ -57,7 +57,7 @@ export default {
     width: 100vw;
     background-color: rgb(253, 253, 253);
     color: black;
-    text-align: center;
-    width: ;
+    
+    height: 30px;
 }
 </style>
