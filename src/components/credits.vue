@@ -17,7 +17,10 @@
         <a href="">/admin</a>
     </div>
     <div class="col">
-        <h1></h1>
+        <h1>Social page</h1>
+        <a href="">facebook</a>
+        <a href="">insta</a>
+        <a href="">twitter</a>
     </div>
 </div>
     
