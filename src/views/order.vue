@@ -264,6 +264,16 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  form{
+  width: 100%;
+    height: 100%;
+    display: flex;
+  flex-direction: column;
+  gap: 100px;
+  justify-content: center;
+  align-items: flex-start;
+  }
 }
 @media (max-width: 730px) {
   .main {
