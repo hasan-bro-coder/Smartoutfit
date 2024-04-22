@@ -73,9 +73,9 @@ export default {
   </div>
   <nav>
     <div class="social" >
-        <RouterLink to="/admin/products" v-if="this.$route.path.'/admin'">products</RouterLink>
-        <RouterLink to="/admin/orders">orders</RouterLink>
-      <RouterLink to="/" v-if="this.$route.path.includes('/product')">home</RouterLink>
+        <RouterLink to="/admin/products" v-if="this.$route.path.includes('/admin')">products</RouterLink>
+        <RouterLink to="/admin/orders" v-if="this.$route.path.includes('/admin')">orders</RouterLink>
+      <RouterLink to="/" v-if="this.$route.path.includes('/product') || this.$route.path.includes('/admin')">home</RouterLink>
     </div>
     <!-- <div class="links" v-else> -->
       <!-- <a href="">Home</a>
