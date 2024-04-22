@@ -49,7 +49,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     h1{
-        font-size: 3vw; 
+        font-size: clamp(18px,3vw,40px); 
         margin-bottom: 30px; 
     }
 }
