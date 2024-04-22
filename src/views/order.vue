@@ -21,6 +21,10 @@
           <input name="lastname" type="text">
         </div>
       </div>
+      <div class="con">
+          <label for="companyname">company name:</label>
+          <input name="companyname" type="text">
+        </div>
       <select>
         <option class="select2-results__option" id="select2-billing_state-result-wlvy-BD-05" role="option"
           data-selected="false" tabindex="-1">Bagerhat</option>
@@ -276,7 +280,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 20%;
-
+  text
   form {
     width: 100%;
     height: 100%;
