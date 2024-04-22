@@ -8,8 +8,8 @@
             <h1>contact us</h1>
             <ul>
                 <li>hasanur23910@gmail.com</li>
-                <li>2</li>
-                <li>3</li>
+                <li>017143319XXX</li>
+                <li>bangladesh,tangail,idk</li>
             </ul>
         </div>
         <div class="col">
@@ -34,7 +34,7 @@
             </ul>
         </div>
     </div>
-
+    <div class="bottom"></div>
 </template>
 <script>
 export default {
@@ -52,5 +52,8 @@ export default {
         font-size: 40px; 
         margin-bottom: 30px; 
     }
+}
+.bottom{
+    
 }
 </style>
