@@ -37,5 +37,9 @@ export default {
     height: 300px;
     background-color: rgb(78, 78, 78);
     display: grid;
+    grid-template-columns: repeat(4,1fr);
+    h1{
+        font  
+    }
 }
 </style>
