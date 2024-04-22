@@ -280,8 +280,8 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 20%;
-  text-transform: capitalize;
   form {
+    text-transform: uppercase !important;
     width: 100%;
     height: 100%;
     display: flex;
