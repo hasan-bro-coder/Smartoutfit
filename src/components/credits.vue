@@ -44,14 +44,15 @@ export default {
 <style scoped lang="scss">
 .grid{
     margin-top: 100px;
-    height: 300px;
+    height: 100%;
+    gap:20px;
     background-color: rgb(78, 78, 78);
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
-    grid-template-rows: 100px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-rows: 200px;
     h1{
         font-size: clamp(18px,3vw,40px); 
-        margin-bottom: 30px; 
+        // margin-bottom: 30px; 
     }
 }
 .bottom{
