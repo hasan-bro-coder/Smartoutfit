@@ -287,7 +287,9 @@ export default {
     align-items: flex-start;
     input{
       height:40px;
-      width:100%
+      width:100%;
+      font-family:monospace;
+      font-size: 12px
     }
     .con {
       display: flex;
