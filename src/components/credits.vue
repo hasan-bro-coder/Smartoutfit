@@ -47,7 +47,8 @@ export default {
     height: 300px;
     background-color: rgb(78, 78, 78);
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    grid-template-rows: 100px;
     h1{
         font-size: clamp(18px,3vw,40px); 
         margin-bottom: 30px; 
