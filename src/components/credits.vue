@@ -49,10 +49,10 @@ export default {
     background-color: rgb(78, 78, 78);
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-template-rows: 200px;
+    grid-template-rows: 300px 300px 300px 300px;
     h1{
         font-size: clamp(18px,3vw,40px); 
-        // margin-bottom: 30px; 
+       
     }
 }
 .bottom{
