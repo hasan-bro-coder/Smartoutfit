@@ -3,7 +3,7 @@
     <h1>
       Smart Outfit
     </h1>
-    <p>Tag line needed (not found)</p>
+    <p>Where Style Meets Intelligence</p>
   </main>
   <div class="paralax" >
     <div class="section">PRODUCT</div>
