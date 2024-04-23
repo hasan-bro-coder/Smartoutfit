@@ -1,5 +1,6 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import gsap from "gsap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {store} from "./store";
@@ -51,25 +52,40 @@ export default {
   async mounted() {
     AOS.init();
     this.update()
+    let tl = gsap.timeline();
+    tl.from(".loader h1", {
+		duration: 1.5,
+    scale:0.1,
     
+		// ease: Power4.easeOut,
+	});
+  tl.to(".loader", {
+		duration: 1.5,
+		clipPath: "circle(0% at 50% 0%)",
+		// ease: Power4.easeOut,
+    onComplete(){
+      document.body.style.overflowY = "auto"
+    }
+	});
   },
 };
 </script>
 
 <template>
-  <!-- <div class="loader">
+  <div class="loader">
     <h1>Smart Outfit</h1>
-  </div> -->
+  </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
     <h1 v-if="havecart">Not Found</h1>
-    <div>
+    <div class="prod-con">
       <div class="prod" v-for="prod in cart" :key="prod.id" @click="send(prod._id)">
-        <h1>{{ prod.name }}</h1>
-        <h2>Tk {{ prod.price }}</h2>
+        <img :src="prod.image" alt="not found">
+        <p class="name">{{ prod.name }}</p>
+        <p class="price">Tk {{ prod.price }}</p>
       </div>
-      <button @click="order()">order</button>
     </div>
+    <button @click="order()">order</button>
   </div>
   <nav>
     <div class="social" >
@@ -83,7 +99,9 @@ export default {
     <a href="">contact us</a> -->
     <!-- </div> -->
     <div class="logo">
-      <h1>Smart Outfit</h1>
+      <!-- <h1>Smart Outfit</h1> -->
+      <input type="text" placeholder="Search items">
+      <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"><path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
     </div>
     <div class="buttons">
       <button class="fav" @click="sidebar()">
@@ -108,14 +126,21 @@ export default {
 .loader {
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   position: absolute;
   z-index: 3;
   width: 100vw;
   height: 100vh;
-  background-color: black;
-  color: white;
-  clip-path: circle(100% at 50% 50%),
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  clip-path: circle(100% at 50% 50%);
+  h1{
+    margin-top: 160px;
+    font-size: max(50px,12vw);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
+  }
 }
 
 .sidebar {
@@ -130,22 +155,42 @@ export default {
   outline: 1px transparent solid;
   transition: 1s;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   padding: 0px;
-  gap: 10px;
   overflow-x: hidden;
-
+  .prod-con{
+    width: 100%;
+    display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+    overflow: auto;
+  }
   .prod {
     background-color: rgba(0, 0, 0, 0.293);
     border-radius: 8px;
     width: 100%;
     min-height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    // justify-content: center;
+    // align-items: center;
+    // gap: 10px;
+    .name{
+      font-size: 25px;
+    }
+    .price{
+      font-weight: 700;
+    }
+    img{
+      grid-area: 1 / 1 / 3 / 2;
+      height: 100%;
+      // width: 100%;
+    }
   }
 }
 
@@ -167,7 +212,35 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    input{
+      border: 1px solid white;
+      border-width: 1px;
+      border-right: none;
+      height: 40px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      width: calc(100%);
+      background-color: #202020;
+      padding:20px;
+      color:rgb(243, 243, 243);
+      font-size: 14px;
+      &:focus-visible{
+        border-color: white !important;
+        color: white;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    }
+    svg{
+      width: 40px;
+      height: 42px;
+      padding: 0px 5px;
+      fill: white;
+      background-color: #202020;
+      border: 1px solid white;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
     h1 {
       font-size: calc(20px * 1.618);
     }

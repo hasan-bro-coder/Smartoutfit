@@ -1,4 +1,10 @@
 <template>
+  <main>
+    <h1>
+      Smart Outfit
+    </h1>
+    <p>Tag line needed (not found)</p>
+  </main>
   <div class="paralax" >
     <div class="section">PRODUCT</div>
     <div class="section">PRODUCT</div>
@@ -37,6 +43,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  h1{
+    margin-top: 100px;
+    font-size: max(50px,12vw);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    // font-family: Consolas,Menlo;
+    // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
+  }
+  p{
+    font-size: max(14px,1.5vw);
+  }
+}
 .paralax {
   height: calc(100vh);
   width: 300vw;

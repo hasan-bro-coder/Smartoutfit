@@ -1,14 +1,6 @@
 <template>
-  <div class="main">
-    <div class="left" data-aos="fade-up">
-      <img :src="data.image" alt="" class="img">
-    </div>
+  <div class="body">    
 
-    <div class="right">
-      <h1>{{ data.name }}</h1>
-      <h2 class="price">Tk {{ data.price }}</h2>
-    </div>
-  </div>
   <div class="form">
     <form action="">
       <div class="inpgrp">
@@ -29,7 +21,13 @@
         <label for="streetaddress">Street address:</label>
         <input name="streetaddress" type="text">
       </div>
-      <select>
+      <div class="con">
+        <label for="town">Town / City:</label>
+        <input name="town" type="text">
+      </div>
+      <div class="con">
+        <label for="district">District:</label>
+        <select name="district">
         <option class="select2-results__option" id="select2-billing_state-result-wlvy-BD-05" role="option"
           data-selected="false" tabindex="-1">Bagerhat</option>
         <option class="select2-results__option" id="select2-billing_state-result-a08r-BD-01" role="option"
@@ -160,11 +158,40 @@
         <option class="select2-results__option" id="select2-billing_state-result-6yl9-BD-64" role="option"
           data-selected="false" tabindex="-1">Thakurgaon</option>
       </select>
+      </div>
+      <div class="con">
+          <label for="postcode">Postcode / ZIP (optional):</label>
+          <input name="postcode" type="text">
+        </div>
+        <div class="con">
+        <label for="mobile">Billing Mobile Number:</label>
+        <input name="mobile" type="text">
+      </div>
+      <div class="con">
+        <label for="email">Billing Email:</label>
+        <input name="email" type="email">
+      </div>
+      <div class="con">
+        <label for="detail">other details:</label>
+        <input name="detail" type="email">
+      </div>
       <div class="btn-con">
         <button class="order" @click="order(data._id)">confirm order</button>
       </div>
     </form>
+  </div> 
+  <div class="main">
+    <div class="left" data-aos="fade-up">
+      <img :src="data.image" alt="" class="img">
+    </div>
+
+    <div class="right">
+      <h1>{{ data.name }}</h1>
+      <h2 class="price">Tk {{ data.price }}</h2>
+    </div>
   </div>
+</div>
+
 </template>
 <script>
 import { store } from "../store"
@@ -197,8 +224,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.main {
+.body{
   width: 100vw;
+  display: flex; 
+  justify-content: space-between;
+  // align-items: center;
+  padding: 10px;
+}
+.main {
+  width: 50%;
+  padding-top: 50px;
   height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
@@ -277,13 +312,14 @@ export default {
 }
 
 .form {
-  width: 100vw;
-  height: calc(100vh - 60px);
+  width: 50%;
+  padding: 50px;
+  // width: 100vw;
+  // height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 20%;
 
   form {
     width: 100%;
@@ -297,14 +333,18 @@ export default {
     input {
       height: 40px;
       width: 100%;
-      font-family: monospace;
+      // font-family: monospace;
       font-size: 16px
     }
 
     label {
       text-transform: uppercase !important;
     }
-
+    select{
+      height: 40px;
+      width: 100%;
+      font-size: 16px
+    }
     .con {
       display: flex;
       flex-direction: column;
@@ -323,13 +363,19 @@ export default {
 }
 
 @media (max-width: 730px) {
+  .body{
+    flex-direction: column-reverse;
+  }
   .main {
     flex-direction: column;
-
+    width: 100%;
     .right,
     .left {
       width: 80%;
     }
+  }
+  .form{
+    width: 100%;
   }
 }
 </style>

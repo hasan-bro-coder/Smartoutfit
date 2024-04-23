@@ -1,5 +1,6 @@
 <template>
-  <div class="products">
+  <div class="loader" v-if="products.length <= 0"><img src="/loader.gif" alt=""></div>
+  <div class="products" v-else>
     <div class="product" v-for="(product, index) in products" :key="product._id" @click="send(product._id)"
       data-aos="fade-up" :data-aos-delay="index < 30 ? (index) * 100 : 100">
       <!-- src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" -->
@@ -7,7 +8,6 @@
       <div class="bottom">
         <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price"
           @mouseover="$event.target.innerText = 'available: ' + product.quantity">Tk {{ product.price }}</div>
-
         <div class="btn-con">
           <button class="cart">checkout<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path
@@ -43,6 +43,18 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100px;
+  }
+}
+
 .products {
   display: grid;
   // width: 50vw;
@@ -60,11 +72,13 @@ export default {
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
+
     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
-    &:hover{
+    &:hover {
       transform: translateY(-60px) !important;
       // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0.575) ;
     }
+
     img {
       object-fit: cover;
       width: 100%;

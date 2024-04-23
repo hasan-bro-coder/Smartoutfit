@@ -46,7 +46,7 @@ export default {
     margin-top: 100px;
     min-height: 300px;
     gap:20px;
-    background-color: rgb(78, 78, 78);
+    background-color: #363636;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-template-rows: repeat(auto-fit,minmax(100px,1fr));
