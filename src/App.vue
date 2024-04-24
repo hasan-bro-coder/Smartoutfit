@@ -141,14 +141,15 @@ export default {
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
   .main{
-    left: -380px;
+    left: calc(min(-50px,-12vw)*10);
     position: absolute;
     top: 160px;
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
     font-weight: 600;
-    &{
-      
+    transition: 1s;
+    &:hover{
+      left: 0px;
     }
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
   }
