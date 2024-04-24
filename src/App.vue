@@ -57,26 +57,28 @@ export default {
     AOS.init();
     this.update()
     let tl = gsap.timeline();
-    tl.from(".loader h1", {
-		duration: 1.5,
-    scale:0.1,
+  //   tl.from(".loader h1", {
+	// 	duration: 1.5,
+  //   scale:0.1,
     
-		// ease: Power4.easeOut,
-	});
-  tl.to(".loader", {
-		duration: 1.5,
-		clipPath: "circle(0% at 50% 0%)",
-		// ease: Power4.easeOut,
-    onComplete(){
-      document.body.style.overflowY = "auto"
-    }
-	});
+	// 	// ease: Power4.easeOut,
+	// });
+  // tl.to(".loader", {
+	// 	duration: 1.5,
+	// 	clipPath: "circle(0% at 50% 0%)",
+	// 	// ease: Power4.easeOut,
+  //   onComplete(){
+  //     document.body.style.overflowY = "auto"
+  //   }
+	// });
   },
 };
 </script>
 
 <template>
   <div class="loader">
+    <h1>S</h1>
+    <div class="rect"></div>
     <h1>Smart Outfit</h1>
   </div>
   <!-- <div class="nav"></div> -->
