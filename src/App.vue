@@ -78,7 +78,8 @@ export default {
 <template>
   <div class="loader">
     <div class="con">
-      <div class="rect"><h1>S</h1></div>
+      <div class="rect"></div>
+      <h1>S</h1>
       <h1 class="main">mart Outfit</h1>
     </div>
   </div>
@@ -166,9 +167,9 @@ export default {
     top: 160px;
     // left: 50%;
     // margin-left: -12vw;
-    background: rgb(255, 255, 255);
+    background: rgb(173, 14, 14);
     // width: 100%;
-    height: 260px;
+    // height: 260px;
     display: flex;
     justify-content: center;
     // align-items: center;
