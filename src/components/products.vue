@@ -91,7 +91,7 @@ export default {
       transition: 1s;
       &:hover{
       // object-fit: contain;
-      width:auto
+      // width:auto
       }
     }
 
