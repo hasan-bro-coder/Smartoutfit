@@ -149,7 +149,7 @@ export default {
   width: 100vw;
   height: 100vh;
   }
-  .main{
+  h1{
     left: calc(min(-50px,-12vw)*10);
     top: 160px;
     font-size: max(50px,12vw);
@@ -164,12 +164,13 @@ export default {
     }
   .rect{
     z-index: 100;
+    position: absolute;
     top: 160px;
     // left: 50%;
     // margin-left: -12vw;
     background: rgb(173, 14, 14);
-    // width: 100%;
-    // height: 260px;
+    width: 100%;
+    height: 260px;
     display: flex;
     justify-content: center;
     // align-items: center;
