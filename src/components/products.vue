@@ -74,8 +74,8 @@ export default {
     border-radius: 12px;
     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
     &:hover {
-      // transform: translateY(-40px) !important;
-      background-color: rgba(54, 54, 54, 0.267);
+      transform: translateY(-40px) !important;
+      // background-color: rgba(54, 54, 54, 0.267);
       // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0.575) ;
     }
 
@@ -88,8 +88,10 @@ export default {
       justify-content: flex-start;
       // align-items: center;
       // height:85%
+      transition: 1s;
       &:hover{
-      object-fit: contain;
+      // object-fit: contain;
+      width:auto
       }
     }
 
