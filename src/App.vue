@@ -79,7 +79,7 @@ export default {
   <div class="loader">
     
     <div class="rect"><h1>S</h1></div>
-    <h1>Smart Outfit</h1>
+    <h1 class="main">Smart Outfit</h1>
   </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
@@ -140,7 +140,7 @@ export default {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
-  h1{
+  .main{
     margin-top: 160px;
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
