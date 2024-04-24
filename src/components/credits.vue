@@ -45,6 +45,7 @@ export default {
 .grid{
     margin-top: 100px;
     min-height: 300px;
+    padding:0px 10px;
     gap:20px;
     background-color: #363636;
     display: grid;
@@ -52,7 +53,7 @@ export default {
     grid-template-rows: repeat(auto-fit,minmax(100px,1fr));
     h1{
         font-size: clamp(18px,3vw,40px); 
-       
+       margin-bottom: 10px;
     }
 }
 .bottom{

@@ -30,6 +30,10 @@ export default {
       }
       closed = !closed;
     },
+    search(){
+      window.location.pathname = "/search/" + this.$refs.input.value;
+
+    },
     async update(){
     let datas = [];
     let cart = JSON.parse(localStorage.getItem("fav") || "[]");
@@ -91,7 +95,7 @@ export default {
     <div class="social" >
         <RouterLink to="/admin/products" v-if="this.$route.path.includes('/admin')">products</RouterLink>
         <RouterLink to="/admin/orders" v-if="this.$route.path.includes('/admin')">orders</RouterLink>
-      <RouterLink to="/" v-if="this.$route.path.includes('/product') || this.$route.path.includes('/admin')">home</RouterLink>
+      <RouterLink to="/" v-if="this.$route.path.includes('/product') || this.$route.path.includes('/admin') || this.$route.path.includes('/search')">home</RouterLink>
     </div>
     <!-- <div class="links" v-else> -->
       <!-- <a href="">Home</a>
@@ -100,8 +104,8 @@ export default {
     <!-- </div> -->
     <div class="logo">
       <!-- <h1>Smart Outfit</h1> -->
-      <input type="text" placeholder="Search items">
-      <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"><path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
+      <input type="text" placeholder="Search items" ref="input">
+      <svg @click="search()" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"><path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
     </div>
     <div class="buttons">
       <button class="fav" @click="sidebar()">
@@ -128,7 +132,7 @@ export default {
   justify-content: center;
   // align-items: center;
   position: absolute;
-  z-index: 3;
+  z-index: 3000;
   width: 100vw;
   height: 100vh;
   background-color: rgb(255, 255, 255);
@@ -189,7 +193,8 @@ export default {
     img{
       grid-area: 1 / 1 / 3 / 2;
       height: 100%;
-      // width: 100%;
+      max-height: 70px;
+      max-width: 100%;
     }
   }
 }

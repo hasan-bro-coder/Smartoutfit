@@ -3,7 +3,7 @@
     <h1>
       Smart Outfit
     </h1>
-    <p>Where Style Meets Intelligence</p>
+    <p>Where Style Meets smartness</p>
   </main>
   <div class="paralax" >
     <div class="section">PRODUCT</div>

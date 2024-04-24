@@ -75,7 +75,7 @@ export default {
 
     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
     &:hover {
-      transform: translateY(-60px) !important;
+      transform: translateY(-40px) !important;
       // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0.575) ;
     }
 
