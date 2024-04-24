@@ -63,6 +63,14 @@ export default {
     
 		// ease: Power4.easeOut,
 	});
+//   const myText = new SplitType('#my-text')
+
+// gsap.to('.char', {
+//     y: 0,
+//     stagger: 0.05,
+//     delay: 0.2,
+//     duration: .1
+// })
   tl.to(".loader", {
 		duration: 1.5,
 		clipPath: "circle(0% at 50% 0%)",
@@ -143,9 +151,14 @@ export default {
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
     font-weight: 600;
-    // font-family: Bebus Neue;
-    // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
-  }
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    line-height: 5.9rem;
+}
+
+.char {
+    transform: translateY(115px);
+    transition: transform .5s;
+}
 }
 
 .sidebar {
