@@ -148,7 +148,7 @@ export default {
     color: rgb(0, 0, 0);
     font-weight: 600;
     transition: 1s;
-    
+    text-transform: none !important;
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
   }
   &:hover .main{
@@ -160,6 +160,7 @@ export default {
     top: 160px;
     // left: 50%;
     // margin-left: -12vw;
+    color:blue
     background: rgb(202, 202, 202);
     width: calc(max(50px,12vw));
     height: 260px;
