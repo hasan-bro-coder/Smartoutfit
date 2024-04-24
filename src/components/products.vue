@@ -68,7 +68,7 @@ export default {
     background-color: rgb(54, 54, 54);
     color: white;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
@@ -84,7 +84,7 @@ export default {
       width: 100%;
       min-height: 250px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       // align-items: center;
       // height:85%
     }
