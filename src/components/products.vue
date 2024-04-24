@@ -81,8 +81,8 @@ export default {
 
     img {
       object-fit: cover;
-      width: 100%;
-      min-height: 250px;
+      width: 250px;
+      height: ;
       display: flex;
       justify-content: flex-start;
       // align-items: center;
