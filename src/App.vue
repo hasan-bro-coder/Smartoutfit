@@ -148,11 +148,12 @@ export default {
     color: rgb(0, 0, 0);
     font-weight: 600;
     transition: 1s;
-    &:hover{
-      left: 0px;
-    }
+    
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
   }
+  &:hover .main{
+      left: 0px;
+    }
   .rect{
     z-index: 100;
     position: absolute;
