@@ -155,10 +155,10 @@ export default {
     top: 160px;
     // left: 1;
     background: rgb(202, 101, 101);
-    width: max(50px,12vw);
+    width: calc(max(50px,12vw)*10);
     height: 260px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     h1{
       font-size: max(50px,12vw);
