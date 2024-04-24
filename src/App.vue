@@ -154,7 +154,7 @@ export default {
     position: absolute;
     top: 160px;
     // left: 50%;
-    mar
+    // margin-left: -12vw;
     background: rgb(202, 101, 101);
     width: calc(max(50px,12vw));
     height: 260px;
