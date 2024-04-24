@@ -79,7 +79,7 @@ export default {
   <div class="loader">
     
     <div class="rect"><h1>S</h1></div>
-    <h1 class="main">Smart Outfit</h1>
+    <h1 class="main">mart Outfit</h1>
   </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
