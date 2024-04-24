@@ -44,6 +44,7 @@ export default {
       let cart = JSON.parse(localStorage.getItem("fav")) || []
       !cart.includes(id) ? cart.push(id) : ""
       localStorage.setItem("fav",JSON.stringify(cart))
+      store.cart = cart
     }
   },
   async mounted() {
