@@ -131,7 +131,7 @@ export default {
 <style scoped lang="scss">
 .loader {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   // align-items: center;
   position: absolute;
   z-index: 3000;
@@ -152,7 +152,7 @@ export default {
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
   }
   &:hover .main{
-      left: 0px;
+      left: calc(max(50px,12vw));
     }
   .rect{
     z-index: 100;
@@ -160,7 +160,7 @@ export default {
     top: 160px;
     // left: 50%;
     // margin-left: -12vw;
-    background: rgb(202, 101, 101);
+    background: rgb(202, 202, 202);
     width: calc(max(50px,12vw));
     height: 260px;
     display: flex;
