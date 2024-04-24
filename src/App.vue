@@ -103,10 +103,10 @@ export default {
     <a href="">contact us</a> -->
     <!-- </div> -->
     <div class="logo">
-      <span>
+      <div>
         <input type="text" placeholder="Search items" ref="input">
         <svg @click="search()" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"><path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
-      </span>
+      </div>
       <!-- <h1>Smart Outfit</h1> -->
     </div>
     <div class="buttons">
@@ -216,25 +216,27 @@ nav {
 
   .logo {
     min-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    input{
-      border: 1px solid white;
-      border-width: 1px;
-      border-right: none;
-      height: 40px;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-      width: calc(100%);
-      background-color: #202020;
-      padding:20px;
-      color:rgb(243, 243, 243);
-      font-size: 14px;
-      &:focus-visible{
-        border-color: white !important;
-        color: white;
-        outline: none !important;
+    div{
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      input{
+        border: 1px solid white;
+        border-width: 1px;
+        border-right: none;
+        height: 40px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: calc(100%);
+        background-color: #202020;
+        padding:20px;
+        color:rgb(243, 243, 243);
+        font-size: 14px;
+        &:focus-visible{
+          border-color: white !important;
+          color: white;
+          outline: none !important;
         box-shadow: none !important;
       }
     }
@@ -248,6 +250,7 @@ nav {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
     }
+  }
     h1 {
       font-size: calc(20px * 1.618);
     }
