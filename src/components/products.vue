@@ -83,6 +83,7 @@ export default {
       object-fit: contain;
       width: 100%;
       height: 100%;
+      aspect-ratio: 1 /1 ;
       display: flex;
       justify-content: flex-start;
       // align-items: center;
