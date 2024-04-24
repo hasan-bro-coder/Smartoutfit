@@ -153,7 +153,7 @@ export default {
     z-index: 100;
     position: absolute;
     top: 160px;
-    // left: 1;
+    left: 50%;
     background: rgb(202, 101, 101);
     width: calc(max(50px,12vw));
     height: 260px;
