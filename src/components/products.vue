@@ -61,7 +61,7 @@ export default {
   gap: 30px;
   margin: 100px;
   //    place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: 400px;
 
   .product {
@@ -81,9 +81,9 @@ export default {
 
     img {
       object-fit: cover;
-      // width: 100%;
+      width: 100%;
       height: 100%;
-      aspect-ratio: 1 /1 ;
+      // aspect-ratio: 1 /1 ;
       display: flex;
       justify-content: flex-start;
       // align-items: center;
