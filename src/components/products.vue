@@ -88,6 +88,9 @@ export default {
       justify-content: flex-start;
       // align-items: center;
       // height:85%
+      &:hover{
+      object-fit: contain;
+      }
     }
 
     .bottom {
