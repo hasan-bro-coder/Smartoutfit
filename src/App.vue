@@ -131,7 +131,7 @@ export default {
 <style scoped lang="scss">
 .loader {
   display: flex;
-  // justify-content: center;
+  justify-content: center;
   // align-items: center;
   position: absolute;
   z-index: 3000;
@@ -153,7 +153,8 @@ export default {
     z-index: 100;
     position: absolute;
     top: 160px;
-    left: 50%;
+    // left: 50%;
+    mar
     background: rgb(202, 101, 101);
     width: calc(max(50px,12vw));
     height: 260px;
