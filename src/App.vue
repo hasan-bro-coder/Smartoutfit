@@ -63,14 +63,14 @@ export default {
     
 	// 	// ease: Power4.easeOut,
 	// });
-  // tl.to(".loader", {
-	// 	duration: 1.5,
-	// 	clipPath: "circle(0% at 50% 0%)",
-	// 	// ease: Power4.easeOut,
-  //   onComplete(){
-  //     document.body.style.overflowY = "auto"
-  //   }
-	// });
+  gsap.to(".loader", {
+		duration: 1.5,
+		clipPath: "circle(0% at 50% 0%)",
+		// ease: Power4.easeOut,
+    onComplete(){
+      document.body.style.overflowY = "auto"
+    }
+	});
   },
 };
 </script>
@@ -140,9 +140,9 @@ export default {
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
   img{
-    width: max(50px,12vw);
+    width: calc(max(50px,12vw)*5);
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   h1{
     margin-top: 160px;
