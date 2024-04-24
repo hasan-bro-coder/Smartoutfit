@@ -149,7 +149,7 @@ export default {
   width: 100vw;
   height: 100vh;
   }
-  h1{
+  .main{
     left: calc(min(-50px,-12vw)*10);
     top: 160px;
     font-size: max(50px,12vw);
@@ -158,6 +158,9 @@ export default {
     transition: 1s;
     text-transform: none !important;
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
+    & > h1{
+      z-index: 100;
+    }
   }
   &:hover .main{
       left: calc(max(50px,12vw));
@@ -169,7 +172,7 @@ export default {
     // left: 50%;
     // margin-left: -12vw;
     background: rgb(173, 14, 14);
-    width: 100%;
+    // width: 100%;
     height: 260px;
     display: flex;
     justify-content: center;
