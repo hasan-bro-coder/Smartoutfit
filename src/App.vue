@@ -77,9 +77,10 @@ export default {
 
 <template>
   <div class="loader">
-    
-    <div class="rect"><h1>S</h1></div>
-    <h1 class="main">mart Outfit</h1>
+    <div class="con">
+      <div class="rect"><h1>S</h1></div>
+      <h1 class="main">mart Outfit</h1>
+    </div>
   </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
@@ -140,9 +141,11 @@ export default {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
+  .con{
+    display: flex;
+  }
   .main{
     left: calc(min(-50px,-12vw)*10);
-    position: absolute;
     top: 160px;
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
@@ -156,7 +159,6 @@ export default {
     }
   .rect{
     z-index: 100;
-    position: absolute;
     top: 160px;
     // left: 50%;
     // margin-left: -12vw;
