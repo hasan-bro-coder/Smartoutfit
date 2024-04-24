@@ -80,9 +80,9 @@ export default {
     }
 
     img {
-      object-fit: cover;
-      width: 250px;
-      height: ;
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: flex-start;
       // align-items: center;
