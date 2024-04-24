@@ -143,6 +143,7 @@ export default {
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
     font-weight: 600;
+    // font-family: Bebus Neue;
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
   }
 }
