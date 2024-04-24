@@ -57,13 +57,13 @@ export default {
     AOS.init();
     this.update()
     let tl = gsap.timeline();
-  //   tl.from(".loader h1", {
-	// 	duration: 1.5,
-  //   scale:0.1,
+    tl.from(".loader h1", {
+		duration: 1.5,
+    scale:0.1,
     
-	// 	// ease: Power4.easeOut,
-	// });
-  gsap.to(".loader", {
+		// ease: Power4.easeOut,
+	});
+  tl.to(".loader", {
 		duration: 1.5,
 		clipPath: "circle(0% at 50% 0%)",
 		// ease: Power4.easeOut,
@@ -77,8 +77,7 @@ export default {
 
 <template>
   <div class="loader">
-    <!-- <h1>Smart Outfit</h1> -->
-    <img src="/loder.gif" alt="">
+    <h1>Smart Outfit</h1>
   </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
@@ -139,11 +138,6 @@ export default {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
-  img{
-    width: calc(max(50px,12vw)*5);
-    height: 100%;
-    object-fit: contain;
-  }
   h1{
     margin-top: 160px;
     font-size: max(50px,12vw);
