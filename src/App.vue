@@ -78,6 +78,7 @@ export default {
 <template>
   <div class="loader">
     <h1>Smart Outfit</h1>
+    <img src="../" alt="">
   </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
