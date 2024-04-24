@@ -143,6 +143,10 @@ export default {
   clip-path: circle(100% at 50% 50%);
   .con{
     display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
   }
   .main{
     left: calc(min(-50px,-12vw)*10);
