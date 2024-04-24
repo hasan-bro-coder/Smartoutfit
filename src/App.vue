@@ -57,31 +57,27 @@ export default {
     AOS.init();
     this.update()
     let tl = gsap.timeline();
-  //   tl.from(".loader h1", {
-	// 	duration: 1.5,
-  //   scale:0.1,
+    tl.from(".loader h1", {
+		duration: 1.5,
+    scale:0.1,
     
-	// 	// ease: Power4.easeOut,
-	// });
-  // tl.to(".loader", {
-	// 	duration: 1.5,
-	// 	clipPath: "circle(0% at 50% 0%)",
-	// 	// ease: Power4.easeOut,
-  //   onComplete(){
-  //     document.body.style.overflowY = "auto"
-  //   }
-	// });
+		// ease: Power4.easeOut,
+	});
+  tl.to(".loader", {
+		duration: 1.5,
+		clipPath: "circle(0% at 50% 0%)",
+		// ease: Power4.easeOut,
+    onComplete(){
+      document.body.style.overflowY = "auto"
+    }
+	});
   },
 };
 </script>
 
 <template>
   <div class="loader">
-    <div class="con">
-      <div class="rect"></div>
-      <h1>S</h1>
-      <h1 class="main">mart Outfit</h1>
-    </div>
+    <h1>Smart Outfit</h1>
   </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
@@ -133,7 +129,7 @@ export default {
 <style scoped lang="scss">
 .loader {
   display: flex;
-  // justify-content: center;
+  justify-content: center;
   // align-items: center;
   position: absolute;
   z-index: 3000;
@@ -142,46 +138,12 @@ export default {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
-  .con{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  }
-  .main{
-    left: calc(min(-50px,-12vw)*10);
-    top: 160px;
+  h1{
+    margin-top: 160px;
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
     font-weight: 600;
-    transition: 1s;
-    text-transform: none !important;
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
-    & > h1{
-      z-index: 100;
-    }
-  }
-  &:hover .main{
-      left: calc(max(50px,12vw));
-    }
-  .rect{
-    z-index: 100;
-    position: absolute;
-    top: 160px;
-    // left: 50%;
-    // margin-left: -12vw;
-    background: rgb(173, 14, 14);
-    // width: 100%;
-    height: 260px;
-    display: flex;
-    justify-content: center;
-    // align-items: center;
-    h1{
-      font-size: max(50px,12vw);
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    }
   }
 }
 
