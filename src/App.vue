@@ -141,6 +141,7 @@ export default {
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
   .main{
+    position: absolute;
     margin-top: 160px;
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
@@ -148,13 +149,19 @@ export default {
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
   }
   .rect{
+    position: absolute;
     margin-top: 160px;
-    background: black;
+    background: rgb(219, 16, 16);
     width: max(50px,12vw);
     height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
+    h1{
+      font-size: max(50px,12vw);
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    }
   }
 }
 
