@@ -160,13 +160,13 @@ export default {
     top: 160px;
     // left: 50%;
     // margin-left: -12vw;
-    color:rgba(0, 0, 255, 0.041);
-    background: rgba(202, 202, 202, 0.075);
+    color:rgba(0, 0, 255, 0);
+    background: rgba(202, 202, 202, 0);
     width: 100%;
     height: 260px;
     display: flex;
     font-size: max(50px,12vw);
-    justify-content: flex-end;
+    justify-content: center;
     // align-items: center;
     h1{
       font-size: max(50px,12vw);
