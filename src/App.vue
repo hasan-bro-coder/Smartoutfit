@@ -8,7 +8,7 @@ let closed = true;
 export default {
   data() {
     return {
-      cart: [],
+      cart: store.cart,
       havecart: true
     };
   },
