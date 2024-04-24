@@ -131,7 +131,7 @@ export default {
 <style scoped lang="scss">
 .loader {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   // align-items: center;
   position: absolute;
   z-index: 3000;
@@ -149,9 +149,10 @@ export default {
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
   }
   .rect{
+    z-index: 100;
     position: absolute;
     margin-top: 160px;
-    background: rgb(219, 16, 16);
+    background: rgb(255, 255, 255);
     width: max(50px,12vw);
     height: 260px;
     display: flex;
