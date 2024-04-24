@@ -141,8 +141,9 @@ export default {
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
   .main{
+    left: -1000px;
     position: absolute;
-    margin-top: 160px;
+    top: 160px;
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
     font-weight: 600;
@@ -151,8 +152,9 @@ export default {
   .rect{
     z-index: 100;
     position: absolute;
-    margin-top: 160px;
-    background: rgb(255, 255, 255);
+    top: 160px;
+    // left: 1;
+    background: rgb(202, 101, 101);
     width: max(50px,12vw);
     height: 260px;
     display: flex;
