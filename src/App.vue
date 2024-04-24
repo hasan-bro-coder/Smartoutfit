@@ -78,7 +78,7 @@ export default {
 <template>
   <div class="loader">
     
-    <div class="rect"><h1>S</h1></div>
+    <div class="rect"><h1>S</h1>mart Outfit</div>
     <h1 class="main">mart Outfit</h1>
   </div>
   <!-- <div class="nav"></div> -->
@@ -160,11 +160,12 @@ export default {
     top: 160px;
     // left: 50%;
     // margin-left: -12vw;
-    color:blue
+    color:rgba(0, 0, 255, 0.041);
     background: rgb(202, 202, 202);
     width: calc(max(50px,12vw));
     height: 260px;
     display: flex;
+    font-size: max(50px,12vw);
     justify-content: flex-end;
     // align-items: center;
     h1{
