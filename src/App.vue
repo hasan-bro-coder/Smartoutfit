@@ -141,7 +141,7 @@ export default {
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
   .main{
-    left: -370px;
+    left: -380px;
     position: absolute;
     top: 160px;
     font-size: max(50px,12vw);
@@ -159,7 +159,7 @@ export default {
     height: 260px;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    // align-items: center;
     h1{
       font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
