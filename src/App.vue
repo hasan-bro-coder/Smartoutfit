@@ -77,8 +77,8 @@ export default {
 
 <template>
   <div class="loader">
-    <h1>Smart Outfit</h1>
-    <img src="../" alt="">
+    <!-- <h1>Smart Outfit</h1> -->
+    <img src="/loder.gif" alt="">
   </div>
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
@@ -139,6 +139,10 @@ export default {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
+  img{
+    width: max(50px,12vw)
+    height: 100%
+  }
   h1{
     margin-top: 160px;
     font-size: max(50px,12vw);
