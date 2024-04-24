@@ -43,7 +43,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .grid{
-    margin-top: 100px;
+    margin-top: 150px;
     min-height: 300px;
     padding:0px 10px;
     gap:20px;
