@@ -141,7 +141,7 @@ export default {
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
   .main{
-    left: -1000px;
+    left: -370px;
     position: absolute;
     top: 160px;
     font-size: max(50px,12vw);
@@ -155,7 +155,7 @@ export default {
     top: 160px;
     // left: 1;
     background: rgb(202, 101, 101);
-    width: calc(max(50px,12vw)*10);
+    width: calc(max(50px,12vw));
     height: 260px;
     display: flex;
     justify-content: flex-end;
