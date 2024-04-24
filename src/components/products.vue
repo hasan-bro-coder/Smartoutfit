@@ -72,7 +72,6 @@ export default {
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
-    transition: 1s;
     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
     &:hover {
       // transform: translateY(-40px) !important;
