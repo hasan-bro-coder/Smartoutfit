@@ -77,8 +77,8 @@ export default {
 
 <template>
   <div class="loader">
-    <h1>S</h1>
-    <div class="rect"></div>
+    
+    <div class="rect"><h1>S</h1></div>
     <h1>Smart Outfit</h1>
   </div>
   <!-- <div class="nav"></div> -->
@@ -146,6 +146,12 @@ export default {
     color: rgb(0, 0, 0);
     font-weight: 600;
     // text-shadow: rgba(255, 255, 255, 0.322) 1px 1px 100px;
+  }
+  .rect{
+    margin-top: 160px;
+    background: black;
+    width: max(50px,12vw);
+    height: 60px;
   }
 }
 
