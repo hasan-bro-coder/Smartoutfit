@@ -151,7 +151,10 @@ export default {
     margin-top: 160px;
     background: black;
     width: max(50px,12vw);
-    height: 60px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
