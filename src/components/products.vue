@@ -74,7 +74,7 @@ export default {
     background-color: rgb(54, 54, 54);
     color: white;
     display: flex;
-    // justify-content: center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
@@ -89,6 +89,7 @@ export default {
       object-fit: cover;
       width: 100%;
       height: 100%;
+      max-height: 280px;
       aspect-ratio: 1 /1 ;
       display: flex;
       justify-content: flex-start;

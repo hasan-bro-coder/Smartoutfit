@@ -64,7 +64,7 @@ export default {
 }
 .bottom{
     width: 100vw;
-    background-color: #0095af;
+    background-color: #00bdd6a9;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
