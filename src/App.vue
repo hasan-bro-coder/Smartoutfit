@@ -99,7 +99,7 @@ export default {
         <p class="price">Tk {{ prod.price }}</p>
       </div>
     </div>
-    <button @click="order()">order</button>
+    <!-- <button @click="order()">order</button> -->
   </div>
   <nav>
     <div class="social" >
