@@ -74,14 +74,14 @@ main{
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     .col{
       background-color: blue;
-      width: 100vw;
+      width: 50vw;
       height: 50vh;
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
+      // border-top-left-radius: 50%;
+      border-radius: 50%;
     }
   }
 }
