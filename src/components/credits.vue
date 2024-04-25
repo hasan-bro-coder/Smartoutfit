@@ -55,14 +55,18 @@ export default {
         font-size: clamp(18px,3vw,40px); 
        margin-bottom: 10px;
     }
+    a{
+        color:#00784f;
+    }
 }
 .bottom{
     width: 100vw;
-    background-color: #00bd7e;
+    background-color: #00784f;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30px;
+    
 }
 </style>

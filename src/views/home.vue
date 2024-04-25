@@ -4,6 +4,12 @@
       Smart Outfit
     </h1>
     <p>Where Style Meets smartness</p>
+    <div class="effect">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
   </main>
   <div class="paralax" >
     <div class="section">PRODUCT</div>
@@ -61,6 +67,11 @@ main{
   }
   p{
     font-size: max(14px,1.5vw);
+  }
+  .effect{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
   }
 }
 .paralax {
