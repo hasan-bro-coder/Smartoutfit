@@ -21,6 +21,8 @@ gitter.sh
 
 # Editor directories and files
 .vscode/*
+.unlighthouse/*
+.unlighthouse
 .vscode
 !.vscode/extensions.json
 .idea
