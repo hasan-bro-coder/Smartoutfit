@@ -14,7 +14,7 @@
         </div>
         <div class="col">
             <h1>quick links</h1>
-            <router-link to="/admin">admin page</router-link>
+            <router-link to="/admin" style="color: #00bdd6 !important;">admin page</router-link>
         </div>
         <div class="col">
             <h1>Social page</h1>
