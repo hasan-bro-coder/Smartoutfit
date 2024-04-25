@@ -96,10 +96,6 @@ export default {
       // align-items: center;
       // height:85%
       transition: 1s;
-      &:hover{
-      // object-fit: contain;
-      // width:auto
-      }
     }
 
     .bottom {
