@@ -287,7 +287,7 @@ nav {
     gap: 30px;
     align-items: center;
 
-    button {
+    .fav {
       width: 70px;
       height: 50px;
       display: flex;
