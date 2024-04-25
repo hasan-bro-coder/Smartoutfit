@@ -83,7 +83,7 @@ export default {
 		clipPath: "circle(0% at 50% 0%)",
 		// ease: Power4.easeOut,
     onComplete(){
-      setTimeout(()=>{document.body.style.overflowY = "auto"},1000)
+      setTimeout(()=>{document.querySelector("*").style.overflowY = "auto"},1000)
     }
 	});
   },
