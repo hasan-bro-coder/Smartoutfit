@@ -78,12 +78,10 @@ export default {
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
-    &:hover {
       // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
       // transform: translateY(-40px) !important;
       // background-color: rgba(54, 54, 54, 0.267);
       // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
-    }
 
     img {
       object-fit: cover;
@@ -191,7 +189,7 @@ export default {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .products {
     display: grid;
     // width: 50vw;
