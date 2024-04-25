@@ -72,6 +72,11 @@ main{
     position: absolute;
     width: 100vw;
     height: 100vh;
+    .col{
+      background-color: blue;
+      width: 100vw;
+      height: 50vh;
+    }
   }
 }
 .paralax {
