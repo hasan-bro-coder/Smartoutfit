@@ -46,7 +46,7 @@
   margin: 0;
   font-weight: normal;
   text-transform: capitalize;
-  
+  overflow-y: hidden;
 }
 #veinticinco,  *:-moz-any-link, *:default  { scrollbar-width: thin; }
 .radial-gradient {

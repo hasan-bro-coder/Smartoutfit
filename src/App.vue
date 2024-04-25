@@ -83,7 +83,7 @@ export default {
 		clipPath: "circle(0% at 50% 0%)",
 		// ease: Power4.easeOut,
     onComplete(){
-      setTimeout(()=>{document.querySelector("*").style.overflowY = "auto"},1000)
+      setTimeout(()=>{document.body.style.overflowY = "auto"},1000)
     }
 	});
   },
@@ -143,6 +143,7 @@ export default {
 
 <style scoped lang="scss">
 .loader {
+  po
   display: flex;
   justify-content: center;
   // align-items: center;
