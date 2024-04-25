@@ -45,9 +45,10 @@
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
-  scrollbar-width: thin;
   text-transform: capitalize;
+  
 }
+#veinticinco,  *:-moz-any-link, *:default  { scrollbar-width: thin; }
 .radial-gradient {
   background: radial-gradient(
           circle at 50% 0%,
@@ -84,20 +85,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-::-webkit-scrollbar-thumb{
-  width: 10px;
-  background-color: rgb(107, 107, 107);
-  border: 1px solid rgb(163, 163, 163);
-  border-radius: 10px;
+::-webkit-scrollbar {
+  width: 5px;
 }
-::-webkit-scrollbar-track{
-  width: 10px;
-  color: red;
-  background-color: rgba(255, 255, 255, 0);
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #00000000;
 }
-::-webkit-scrollbar{
-  /* background-color: red; */
-  width: 4px;
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #696969;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #424242;
 }
 #app {
   margin: 0 auto;
