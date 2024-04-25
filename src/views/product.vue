@@ -1,5 +1,6 @@
 <template>
-  <div class="main">
+  <div class="loader" v-if="data == ''"><img src="/loader.gif" alt="loading"></div>
+  <div class="main" v-else>
     <div class="left" data-aos="fade-up">
         <img :src="data.image" alt="image not found">
     </div>

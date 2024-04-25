@@ -182,7 +182,7 @@
   </div> 
   <div class="main">
     <div class="left" data-aos="fade-up">
-      <img :src="data.image" alt="" class="img">
+      <img :src="data.image" alt="image not found" class="img">
     </div>
 
     <div class="right">
