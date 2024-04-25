@@ -28,7 +28,8 @@
         <label for="category">category</label>
         <textarea name="category" type="number" :value="form.category"></textarea>
       </div>
-      <button>OK</button>
+      <button type="submit">OK</button>
+      <button type="button" @click="close('new')">Cancle</button>
     </form>
   </dialog>
   <dialog class="edit">
@@ -57,7 +58,8 @@
         <label for="category">category</label>
         <textarea name="category" type="number" :value="form.category"></textarea>
       </div>
-      <button>OK</button>
+      <button type="submit">OK</button>
+      <button type="button" @click="close('edit')">Cancle</button>
     </form>
   </dialog>
   <div class="products">
@@ -67,11 +69,17 @@
         :src="product.image || 'https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
         alt="image not found" />
       <div class="bottom">
-        <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price" @mouseover="
+        <div class="det">
+
+          <div class="name">
+            {{ product.name }}
+          </div>
+          <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price" @mouseover="
       $event.target.innerText = 'available: ' + product.quantity
       ">
           Tk {{ product.price }}
         </div>
+      </div>
 
         <div class="btn-con">
           <button class="cart" @click="edit(product._id)">
@@ -125,6 +133,10 @@ export default {
       console.log(data);
       this.form = data[0];
       document.querySelector("dialog.edit").showModal();
+    },
+    close(val){
+      if(val == "new") document.querySelector("dialog").close();
+      else document.querySelector("dialog.edit").close();
     },
     async editor() {
       let that = this;
@@ -280,17 +292,21 @@ dialog {
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
-
     img {
       object-fit: cover;
       width: 100%;
-      min-height: 250px;
+      height: 100%;
       // height:85%
+      display: flex;
+      justify-content: flex-start;
+      // align-items: center;
+      // height:85%
+      transition: 1s;
     }
-
+    
     .bottom {
       width: 100%;
-      min-height: 100px;
+      min-height: 120px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -299,11 +315,14 @@ dialog {
 
       .price,
       .quantity {
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 500;
         text-align: center;
       }
-
+      .name {
+        font-size: 20px;
+        text-align: center;
+      }
       .btn-con {
         width: 100%;
         display: flex;

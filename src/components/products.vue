@@ -6,9 +6,15 @@
       <!-- src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" -->
       <img :src="product.image" alt="image not found" />
       <div class="bottom">
-        <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price"
+        <div class="det">
+
+          <div class="name">
+            {{ product.name }}
+          </div>
+          <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price"
           @mouseover="$event.target.innerText = 'available: ' + product.quantity">Tk {{ product.price }}</div>
-        <div class="btn-con">
+        </div>
+          <div class="btn-con">
           <button class="cart">checkout<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path
                 d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
@@ -72,11 +78,11 @@ export default {
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
-    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
     &:hover {
-      transform: translateY(-40px) !important;
+      // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
+      // transform: translateY(-40px) !important;
       // background-color: rgba(54, 54, 54, 0.267);
-      // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0.575) ;
+      // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
     }
 
     img {
@@ -97,7 +103,7 @@ export default {
 
     .bottom {
       width: 100%;
-      min-height: 100px;
+      min-height: 120px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -105,12 +111,15 @@ export default {
       padding: 5px 5px;
 
       .price,
-      .quantity {
-        font-size: 20px;
+      .quantity{
+        font-size: 15px;
         font-weight: 500;
         text-align: center;
       }
-
+      .name {
+        font-size: 20px;
+        text-align: center;
+      }
       .btn-con {
         width: 100%;
         display: flex;
