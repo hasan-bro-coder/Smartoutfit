@@ -6,9 +6,10 @@
     <p>Where Style Meets smartness</p>
     <div class="effect">
       <div class="col"></div>
-      <!-- <div class="col"></div> -->
-      <!-- <div class="col"></div> -->
-      <!-- <div class="col"></div> -->
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
     </div>
   </main>
   <div class="paralax" >
@@ -71,21 +72,42 @@ main{
   .effect{
     position: absolute;
     top: 0;
+    z-index: -1;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    .col{
-      background-color: blue;
-      // width: 50vw;
-      height: 50vh;
-      aspect-ratio: 1/1;
-      // border-top-left-radius: 50%;
-      // border-top-right-radius: 50%;
-      // border-radius: 50%;
-    }
+    overflow: hidden;
+    // box-shadow: 0px 20px 20px 2px rgb(0 195 255 / 63%);
+    // filter: blur(10px);
+    &:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  // top: 5%;
+  // right: 50%;
+  transform: translateX(-50%);
+  height:5%;
+  width: calc(25vh * 5);
+  bottom: -5px;
+  background: linear-gradient(180deg, rgba(139,167,32,0) 0%, rgba(0, 195, 255,1) 100%);
+  pointer-events: none;
+}
+    @for $i from 1 through 6 {
+  .col:nth-child(#{$i}) {
+    position: absolute;
+    bottom: calc(-12.5vh * $i);
+    color: rgb(0, 195, 255);    
+    background-color: rgba(0, 195, 255,calc(((6 - $i)*10)/100));
+    height: calc(25vh * $i);
+    aspect-ratio: 1/1;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    // border-radius: 50%;
   }
+}
+}
 }
 .paralax {
   height: calc(100vh);

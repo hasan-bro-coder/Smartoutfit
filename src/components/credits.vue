@@ -56,12 +56,15 @@ export default {
        margin-bottom: 10px;
     }
     a{
-        color:#00784f;
+        color:#00bdd6;
+        &:hover{
+            background-color:#00bdd6a9;
+        }
     }
 }
 .bottom{
     width: 100vw;
-    background-color: #00784f;
+    background-color: #0095af;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;

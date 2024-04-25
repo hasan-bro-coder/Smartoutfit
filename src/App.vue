@@ -65,8 +65,8 @@ export default {
     let tl = gsap.timeline();
     tl.from(".loader h1", {
 		duration: 1.5,
-    // scale:0.1,
-    clipPath: "inset(0 100% 0 0)",
+    scale:0.1,
+    // clipPath: "inset(0 100% 0 0)",
     
 		// ease: Power4.easeOut,
 	});
