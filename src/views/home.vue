@@ -78,11 +78,11 @@ main{
     align-items: flex-end;
     .col{
       background-color: blue;
-      width: 50vw;
-      // height: 50vh;
+      // width: 50vw;
+      height: 50vh;
       aspect-ratio: 1/1;
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
+      // border-top-left-radius: 50%;
+      // border-top-right-radius: 50%;
       // border-radius: 50%;
     }
   }
