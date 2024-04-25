@@ -39,12 +39,12 @@ export default {
     }
   },
   async mounted() {
-
-    let { data, error } = await store.supabase
-      .from('products')
-      .select('*')
-
-    this.products = data
+    window.onload = async()=>{
+      let { data, error } = await store.supabase
+        .from('products')
+        .select('*')
+        this.products = data
+    }
   },
 };
 </script>
