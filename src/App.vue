@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 import gsap from "gsap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SplitType from 'split-type'
 import {store} from "./store";
 let closed = true;
 export default {
@@ -59,13 +60,14 @@ export default {
     let tl = gsap.timeline();
     tl.from(".loader h1", {
 		duration: 1.5,
-    scale:0.1,
+    // scale:0.1,
+    clipPath: "inset(0 100% 0 0)",
     
 		// ease: Power4.easeOut,
 	});
-//   const myText = new SplitType('#my-text')
+//   const myText = new SplitType('.loader h1')
 
-// gsap.to('.char', {
+// tl.to('.char', {
 //     y: 0,
 //     stagger: 0.05,
 //     delay: 0.2,
@@ -151,13 +153,7 @@ export default {
     font-size: max(50px,12vw);
     color: rgb(0, 0, 0);
     font-weight: 600;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    line-height: 5.9rem;
-}
-
-.char {
-    transform: translateY(115px);
-    transition: transform .5s;
+    clip-path: inset(0 0% 0 0);
 }
 }
 
