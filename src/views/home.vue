@@ -6,9 +6,9 @@
     <p>Where Style Meets smartness</p>
     <div class="effect">
       <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
+      <!-- <div class="col"></div> -->
+      <!-- <div class="col"></div> -->
+      <!-- <div class="col"></div> -->
     </div>
   </main>
   <div class="paralax" >
@@ -72,10 +72,14 @@ main{
     position: absolute;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: ;
+    align-items: flex-end;
     .col{
       background-color: blue;
       width: 100vw;
       height: 50vh;
+
     }
   }
 }
