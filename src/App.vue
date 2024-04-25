@@ -143,11 +143,10 @@ export default {
 
 <style scoped lang="scss">
 .loader {
-  po
+  position: fixed;
   display: flex;
   justify-content: center;
   // align-items: center;
-  position: absolute;
   z-index: 3000;
   width: 100vw;
   height: 100vh;
