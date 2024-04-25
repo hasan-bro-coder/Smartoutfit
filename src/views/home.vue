@@ -70,16 +70,18 @@ main{
   }
   .effect{
     position: absolute;
+    top: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: ;
+    justify-content: flex-end;
     align-items: flex-end;
     .col{
       background-color: blue;
       width: 100vw;
       height: 50vh;
-
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
     }
   }
 }
