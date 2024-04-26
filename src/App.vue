@@ -218,6 +218,7 @@ nav {
   // top: 0;
   // z-index: 3;
   // position: fixed;
+  overflow: hidden;
   width: 100vw;
   height: 60px;
   display: flex;
@@ -325,7 +326,12 @@ nav {
   .social {
     display: none !important;
   }
-
+  .buttons{
+    width: 70px !important;
+  }
+  .logo{
+    min-width: 100px !important;
+  }
   .links {
     gap: 20px !important;
     justify-content: center !important;
