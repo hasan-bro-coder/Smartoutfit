@@ -59,6 +59,17 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100px;
+  }
+}
 .main {
   min-width: 100vw;
   height: calc(100vh - 60px);

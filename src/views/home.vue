@@ -13,9 +13,9 @@
     </div>
   </main>
   <div class="paralax" >
-    <div class="section">PRODUCT</div>
-    <div class="section">PRODUCT</div>
-    <div class="section">PRODUCT</div>
+    <div class="section"><div class="sq"><img src="/demo/660aff8b36119_SLIDE-NEW-.jpg" alt="image not found"></div></div>
+    <div class="section"><div class="sq"><img src="/demo/6604333d59dfc_Untitled-4.jpg" alt="image not found"></div></div>
+    <div class="section"><div class="sq"><img src="/demo/66065b2d278ae_Fb-Cover2.jpg" alt="image not found"></div></div>
   </div>
   <Products></Products>
   <Credits></Credits>
@@ -34,13 +34,14 @@ export default {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(".paralax", {
-      x: -(window.innerWidth * 1.5),
+      x:  -(window.innerWidth * 2),
+      // -document.querySelector(".paralax").clientWidth,
       duration: 2,
       scrollTrigger: {
         trigger: ".paralax",
         // start: "top-=30 top",
         // endTrigger: ".end",
-        // end: "bottom top",
+        // end: "+=3000",
         marker: true,
         pin: true,
         scrub: 1,
@@ -112,18 +113,36 @@ main{
 .paralax {
   height: calc(100vh);
   width: 300vw;
-  padding: 0px 25vw;
+  // padding: 0px 25vw;
   display: flex;
   align-items: center;
-  gap: 25vw;
+  // gap: 25vw;
+  overflow: hidden;
   .section {
-    width: 50vw;
+    width: 100vw;
     height: 80vh;
-    background-color: rgb(54, 54, 54);
+    // background-color: rgb(54, 54, 54);
     display: flex;
     align-items: center;
     justify-content: center;
+    .sq{
+      width: 50vw;
+    height: 80vh;
+    // background-color: rgb(54, 54, 54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      max-width:80vw;
+      object-fit: contain;
+      height:100%;
+    }
+    }
   }
 }
-
+@media (max-width: 750px) {
+  .sq {
+    width: 96vw !important;
+}
+}
 </style>
