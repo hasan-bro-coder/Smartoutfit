@@ -40,9 +40,9 @@ export default {
 
       
     let datas = [];
-    let cart = JSON.parse(localStorage.getItem("fav") || "[]");
-    console.log(cart);
-    cart.forEach(async(el,i)=>{
+    let carts = JSON.parse(localStorage.getItem("fav") || "[]");
+    console.log(carts);
+    carts.forEach(async(el,i)=>{
       try {
         let {data,error} = await store.supabase
         .from('products')
@@ -50,13 +50,12 @@ export default {
         .eq('_id', el)
         console.log(data,error);
         if (!error) { 
-          datas.push(data[0]);
+          this.cart.push(data[0]);
+          this.havecart = false
         }
       }
       catch (e) { console.log(e?.massage) }
     })
-    this.cart = datas;
-    this.havecart = datas.length <= 0;
     }
   },
   async mounted() {

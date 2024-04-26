@@ -14,7 +14,7 @@
         </div>
         <div class="col">
             <h1>quick links</h1>
-            <a href="/admin" >admin page</a>
+            <a href="/admin" style="text-decoration: underline;">admin page</a>
         </div>
         <div class="col">
             <h1>Social page</h1>

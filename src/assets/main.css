@@ -111,7 +111,7 @@ body {
 a,
 .green {
   text-decoration: none;
-  color: hsl(160, 100%, 37%);
+  color: #00bdd6;
   transition: 0.4s;
   padding: 3px;
 }
