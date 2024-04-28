@@ -39,7 +39,6 @@
         .from('products')
         .select('*')
         .textSearch('name', this.$route.params.id)
-        console.log(data);
       this.products = data
       setTimeout(() =>{
         if (this.products?.length <= 0) {

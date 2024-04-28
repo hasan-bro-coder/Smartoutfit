@@ -130,7 +130,6 @@ export default {
         .from('products')
         .select('*')
         .eq('_id', id)
-      console.log(data);
       this.form = data[0];
       document.querySelector("dialog.edit").showModal();
     },
@@ -143,7 +142,6 @@ export default {
       let form = Object.fromEntries(
         new FormData(document.querySelector("dialog.edit form")).entries()
       );
-      console.log(form);
       document.querySelector("dialog.edit").close();
       if(form.hasOwnProperty('image') && form.image == ""){
         delete form.image
@@ -181,7 +179,6 @@ export default {
       let form = Object.fromEntries(
         new FormData(document.querySelector("form")).entries()
       );
-      console.log(form);
       async function FileToDataURL(blob, callback) {
         var a = new FileReader();
         a.onload = function (e) { form.image = e.target.result; callback(form); }
@@ -209,7 +206,6 @@ export default {
     },
   },
   async mounted() {
-    console.log(this.$route);
 
     this.refresh();
   },

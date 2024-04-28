@@ -53,7 +53,6 @@ export default {
         .from('products')
         .select('*')
         .eq('_id', this.$route.params.id)
-        console.log(data);
     this.data = data[0]
   },
 };

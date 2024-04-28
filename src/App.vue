@@ -4,7 +4,7 @@ import gsap from "gsap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SplitType from 'split-type'
-import {store} from "./store";
+import { store } from "./store";
 let closed = true;
 export default {
   data() {
@@ -31,31 +31,29 @@ export default {
       }
       closed = !closed;
     },
-    search(){
+    search() {
       window.location.pathname = "/search/" + this.$refs.input.value;
 
     },
-    async update(){
-  
+    async update() {
 
-      
-    let datas = [];
-    let carts = JSON.parse(localStorage.getItem("fav") || "[]");
-    console.log(carts);
-    carts.forEach(async(el,i)=>{
-      try {
-        let {data,error} = await store.supabase
-        .from('products')
-        .select('*')
-        .eq('_id', el)
-        console.log(data,error);
-        if (!error) { 
-          this.cart.push(data[0]);
-          this.havecart = false
+
+
+      let datas = [];
+      let carts = JSON.parse(localStorage.getItem("fav") || "[]");
+      carts.forEach(async (el, i) => {
+        try {
+          let { data, error } = await store.supabase
+            .from('products')
+            .select('*')
+            .eq('_id', el)
+          if (!error) {
+            this.cart.push(data[0]);
+            this.havecart = false
+          }
         }
-      }
-      catch (e) { console.log(e?.massage) }
-    })
+        catch (e) { console.log(e?.massage) }
+      })
     }
   },
   async mounted() {
@@ -63,28 +61,28 @@ export default {
     this.update()
     let tl = gsap.timeline();
     tl.from(".loader h1", {
-		duration: 1.5,
-    scale:0.1,
-    // clipPath: "inset(0 100% 0 0)",
-    
-		// ease: Power4.easeOut,
-	});
-//   const myText = new SplitType('.loader h1')
+      duration: 1.5,
+      scale: 0.1,
+      // clipPath: "inset(0 100% 0 0)",
 
-// tl.to('.char', {
-//     y: 0,
-//     stagger: 0.05,
-//     delay: 0.2,
-//     duration: .1
-// })
-  tl.to(".loader", {
-		duration: 1.5,
-		clipPath: "circle(0% at 50% 0%)",
-		// ease: Power4.easeOut,
-    onComplete(){
-      setTimeout(()=>{document.body.style.overflowY = "auto"},1000)
-    }
-	});
+      // ease: Power4.easeOut,
+    });
+    //   const myText = new SplitType('.loader h1')
+
+    // tl.to('.char', {
+    //     y: 0,
+    //     stagger: 0.05,
+    //     delay: 0.2,
+    //     duration: .1
+    // })
+    tl.to(".loader", {
+      duration: 1.5,
+      clipPath: "circle(0% at 50% 0%)",
+      // ease: Power4.easeOut,
+      onComplete() {
+        setTimeout(() => { document.body.style.overflowY = "auto" }, 1000)
+      }
+    });
   },
 };
 </script>
@@ -96,30 +94,37 @@ export default {
   <!-- <div class="nav"></div> -->
   <div class="sidebar">
     <h1 v-if="havecart">Not Found</h1>
-    <div class="prod-con">
-      <div class="prod" v-for="prod in cart" :key="prod.id" @click="send(prod._id)">
-        <img :src="prod.image" alt="not found">
-        <p class="name">{{ prod.name }}</p>
-        <p class="price">Tk {{ prod.price }}</p>
+    <div class="prod-con" v-else>
+      <div class="prod" v-for="prod in cart" :key="prod?._id" @click="send(prod._id)">
+        <img :src="prod?.image" alt="not found">
+        <p class="name">{{ prod?.name }}</p>
+        <p class="price">Tk {{ prod?.price }}</p>
       </div>
     </div>
     <!-- <button @click="order()">order</button> -->
   </div>
   <nav>
-    <div class="social" >
-        <RouterLink to="/admin/products" v-if="this.$route.path.includes('/admin')">products</RouterLink>
-        <RouterLink to="/admin/orders" v-if="this.$route.path.includes('/admin')">orders</RouterLink>
-      <RouterLink to="/" v-if="this.$route.path.includes('/product') || this.$route.path.includes('/admin') || this.$route.path.includes('/search')">home</RouterLink>
+    <div class="social">
+      <RouterLink to="/admin/products" v-if="this.$route.path.includes('/admin')">products</RouterLink>
+      <RouterLink to="/admin/orders" v-if="this.$route.path.includes('/admin')">orders</RouterLink>
+      <RouterLink to="/"
+        v-if="this.$route.path.includes('/product') || this.$route.path.includes('/admin') || this.$route.path.includes('/search')">
+        home</RouterLink>
     </div>
     <!-- <div class="links" v-else> -->
-      <!-- <a href="">Home</a>
+    <!-- <a href="">Home</a>
     <a href="">about us</a>
     <a href="">contact us</a> -->
     <!-- </div> -->
     <div class="logo">
       <div v-if="this.$route.path == '/' || this.$route.path.includes('/search')">
         <input type="text" placeholder="Search items" ref="input">
-        <svg @click="search()" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"><path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
+        <svg @click="search()" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"
+          focusable="false">
+          <path
+            d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z">
+          </path>
+        </svg>
       </div>
       <h1 v-else>Smart Outfit</h1>
     </div>
@@ -129,7 +134,7 @@ export default {
           <path
             d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
         </svg>
-      
+
       </div>
       <!-- <button class="fav">favourite</button> -->
     </div>
@@ -152,13 +157,14 @@ export default {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   clip-path: circle(100% at 50% 50%);
-  h1{
+
+  h1 {
     margin-top: 160px;
-    font-size: max(50px,12vw);
+    font-size: max(50px, 12vw);
     color: rgb(0, 0, 0);
     font-weight: 600;
     clip-path: inset(0 0% 0 0);
-}
+  }
 }
 
 .sidebar {
@@ -178,15 +184,17 @@ export default {
   flex-direction: column;
   padding: 0px;
   overflow-x: hidden;
-  .prod-con{
+
+  .prod-con {
     width: 100%;
     display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
     overflow: auto;
   }
+
   .prod {
     background-color: rgba(0, 0, 0, 0.293);
     border-radius: 8px;
@@ -195,16 +203,19 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+
     // justify-content: center;
     // align-items: center;
     // gap: 10px;
-    .name{
+    .name {
       font-size: 25px;
     }
-    .price{
+
+    .price {
       font-weight: 700;
     }
-    img{
+
+    img {
       grid-area: 1 / 1 / 3 / 2;
       height: 100%;
       max-height: 70px;
@@ -229,12 +240,14 @@ nav {
 
   .logo {
     min-width: 300px;
-    div{
+
+    div {
 
       display: flex;
       justify-content: center;
       align-items: center;
-      input{
+
+      input {
         border: 1px solid white;
         border-width: 1px;
         border-right: none;
@@ -243,27 +256,30 @@ nav {
         border-bottom-left-radius: 4px;
         width: calc(100%);
         background-color: #202020;
-        padding:20px;
-        color:rgb(243, 243, 243);
+        padding: 20px;
+        color: rgb(243, 243, 243);
         font-size: 14px;
-        &:focus-visible{
+
+        &:focus-visible {
           border-color: white !important;
           color: white;
           outline: none !important;
-        box-shadow: none !important;
+          box-shadow: none !important;
+        }
+      }
+
+      svg {
+        width: 40px;
+        height: 42px;
+        padding: 0px 5px;
+        fill: white;
+        background-color: #202020;
+        border: 1px solid white;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
       }
     }
-    svg{
-      width: 40px;
-      height: 42px;
-      padding: 0px 5px;
-      fill: white;
-      background-color: #202020;
-      border: 1px solid white;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-    }
-  }
+
     h1 {
       font-size: calc(20px * 1.618);
     }
@@ -325,12 +341,15 @@ nav {
   .social {
     display: none !important;
   }
-  .buttons{
+
+  .buttons {
     width: 70px !important;
   }
-  .logo{
+
+  .logo {
     min-width: 100px !important;
   }
+
   .links {
     gap: 20px !important;
     justify-content: center !important;
