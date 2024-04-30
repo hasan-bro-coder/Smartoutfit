@@ -218,4 +218,33 @@ export default {
   }
 }
 }
+@media (max-width: 370px) {
+  .products {
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-auto-rows: 300px;
+
+  .product {
+    background-color: rgb(54, 54, 54);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+      // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
+      // transform: translateY(-40px) !important;
+      // background-color: rgba(54, 54, 54, 0.267);
+      // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      max-height: 280px;
+      aspect-ratio: 1 /1 ;
+    }
+  }
+}
+}
 </style>
