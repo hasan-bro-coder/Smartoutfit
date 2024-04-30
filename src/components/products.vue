@@ -187,15 +187,15 @@ export default {
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-auto-rows: 400px;
   }
-  .products {
-    display: grid;
-    // width: 50vw;
-    gap: 30px;
-    margin: 0px 25px;
-    //    place-items: center;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    grid-auto-rows: 400px;
-  }
+  // .products {
+  //   display: grid;
+  //   // width: 50vw;
+  //   gap: 30px;
+  //   margin: 0px 25px;
+  //   //    place-items: center;
+  //   grid-template-columns: repeat(2, minmax(220px, 1fr));
+  //   grid-auto-rows: 400px;
+  // }
 }
 
 // @media (max-width: 550px) {
