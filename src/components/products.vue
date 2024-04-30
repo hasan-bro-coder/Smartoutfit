@@ -119,30 +119,6 @@ export default {
         width: 100%;
         display: flex;
       }
-
-      .order {
-        height: 50px;
-        width: 50%;
-        border-radius: 6px;
-        border: 1px white solid;
-        background-color: rgba(255, 255, 255, 0);
-        color: white;
-        transition: 1s;
-
-        &:hover {
-          border: 1px white solid;
-          background-color: white;
-          color: black;
-          fill: black;
-        }
-
-        svg {
-          fill: white;
-          width: 20px;
-          height: 10px;
-        }
-      }
-
       .cart {
         width: 100%;
         display: flex;
@@ -243,6 +219,9 @@ export default {
       height: 100%;
       max-height: 280px;
       aspect-ratio: 1 /1 ;
+    }
+    .cart {
+      height: 30px;
     }
   }
 }
