@@ -191,13 +191,9 @@ export default {
 
 @media (max-width: 550px) {
   .products {
-  display: grid;
-  // width: 50vw;
   gap: 30px;
-  margin: 100px;
-  //    place-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 400px;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-auto-rows: 300px;
 
   .product {
     background-color: rgb(54, 54, 54);
