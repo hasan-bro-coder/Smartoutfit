@@ -184,7 +184,7 @@ export default {
   gap: 30px;
   margin: 100px;
   //    place-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-auto-rows: 400px;
   }
   .products {
