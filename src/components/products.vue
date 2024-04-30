@@ -190,14 +190,120 @@ export default {
 }
 
 @media (max-width: 550px) {
-  .products { 
-    display: grid;
-    // width: 50vw;
-    gap: 30px;
-    margin: 0px 10px;
-    //    place-items: center;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
-    grid-auto-rows: 400px;
+  .products {
+  display: grid;
+  // width: 50vw;
+  gap: 30px;
+  margin: 100px;
+  //    place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 400px;
+
+  .product {
+    background-color: rgb(54, 54, 54);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+      // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
+      // transform: translateY(-40px) !important;
+      // background-color: rgba(54, 54, 54, 0.267);
+      // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      max-height: 280px;
+      aspect-ratio: 1 /1 ;
+      display: flex;
+      justify-content: flex-start;
+      // align-items: center;
+      // height:85%
+      transition: 1s;
+    }
+
+    .bottom {
+      width: 100%;
+      min-height: 120px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      padding: 5px 5px;
+
+      .price,
+      .quantity{
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .name {
+        font-size: 20px;
+        text-align: center;
+      }
+      .btn-con {
+        width: 100%;
+        display: flex;
+      }
+
+      .order {
+        height: 50px;
+        width: 50%;
+        border-radius: 6px;
+        border: 1px white solid;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        transition: 1s;
+
+        &:hover {
+          border: 1px white solid;
+          background-color: white;
+          color: black;
+          fill: black;
+        }
+
+        svg {
+          fill: white;
+          width: 20px;
+          height: 10px;
+        }
+      }
+
+      .cart {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        border-radius: 6px;
+        border: 1px white solid;
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        transition: 1s;
+
+        &:hover {
+          border: 1px white solid;
+          background-color: white;
+          color: black;
+        }
+
+        &:hover svg {
+          fill: black
+        }
+
+        svg {
+          fill: white;
+          width: 20px;
+          height: 10px;
+        }
+      }
+    }
+
+    // aspect-ratio: 1/1;
   }
+}
 }
 </style>
