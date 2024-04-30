@@ -144,9 +144,15 @@ export default {
   .main {
     flex-direction: column;
     height: 100%;
-    .right,
+    .right{
+      width: 90% !important;
+    }
     .left {
-      width: 80% !important;
+      width: 90% !important;
+      height: ;
+    }
+    img{
+      height: auto !important;
     }
   }
 }
