@@ -281,7 +281,7 @@ nav {
     }
 
     h1 {
-      font-size: calc(20px * 1.618);
+      font-size: clamp(10px,5vw,calc(20px * 1.618));
     }
   }
 
