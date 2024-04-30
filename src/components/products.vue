@@ -9,10 +9,10 @@
         <div class="det">
 
           <div class="name">
-            {{ ......}}
+            ......
           </div>
           <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price"
-            @mouseover="$event.target.innerText = 'available: ' + product.quantity">Tk {{ product.price }}</div>        </div>
+            @mouseover="$event.target.innerText = 'available: ' + product.quantity">Tk .......</div>        </div>
         <div class="btn-con">
           <button class="cart">checkout<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path
