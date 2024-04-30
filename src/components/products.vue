@@ -221,7 +221,7 @@ export default {
       aspect-ratio: 1 /1 ;
     }
     .cart {
-      height: 30px;
+      height: 40px !important;
     }
   }
 }
