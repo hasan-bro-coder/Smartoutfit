@@ -78,7 +78,7 @@ export default {
   .left {
     width: 50%;
     height: 80vh;
-    padding: 40px;
+    padding: 0px 40px;
     img {
       background-color: rgba(54, 54, 54, 0);
       width: 100%;
