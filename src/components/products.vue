@@ -214,11 +214,6 @@ export default {
       height: 100%;
       max-height: 280px;
       aspect-ratio: 1 /1 ;
-      display: flex;
-      justify-content: flex-start;
-      // align-items: center;
-      // height:85%
-      transition: 1s;
     }
   }
 }
