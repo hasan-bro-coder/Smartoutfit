@@ -149,7 +149,7 @@ export default {
     }
     .left {
       width: 90% !important;
-      height: ;
+      height: 100% !important;
     }
     img{
       height: auto !important;
