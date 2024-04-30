@@ -146,7 +146,7 @@ export default {
     height: 100%;
     .right,
     .left {
-      width: 80%;
+      width: 80% !important;
     }
   }
 }
