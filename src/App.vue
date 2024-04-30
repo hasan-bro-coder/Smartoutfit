@@ -348,6 +348,7 @@ nav {
 
   .logo {
     min-width: 100px !important;
+    font-size: 10px;
   }
 
   .links {
