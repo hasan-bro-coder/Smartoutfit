@@ -42,7 +42,7 @@ export default {
         // start: "top-=30 top",
         // endTrigger: ".end",
         // end: "+=3000",
-        markers: true,
+        // markers: true,
         marker: true,
         pin: true,
         scrub: 1,
