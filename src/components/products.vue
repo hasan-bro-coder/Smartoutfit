@@ -23,7 +23,7 @@
   </div> -->
   <div class="products" v-else>
     <a :href="'/product/' + product._id" class="product" v-for="(product, index) in products" :key="product._id"
-      @click="send(product._id)" data-aos="fade-up" :data-aos-delay="index < 30 ? (index) * 100 : 100">
+      @click="send(product._id)" data-aos="fade-up" :data-aos-delay="index < 10 ? (index) * 100 : 100">
       <!-- src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" -->
       <img :src="product.image" alt="image not found" />
       <div class="bottom">
