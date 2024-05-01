@@ -1,9 +1,8 @@
 <template>
-  <!-- <div class="loader" v-if="products.length <= 0"><img src="/loader.gif" alt=""></div> -->
-  <div class="products" v-if="products.length <= 0">
+  <div class="loader" v-if="products.length <= 0"><img src="/loader.gif" alt=""></div>
+  <!-- <div class="products" v-if="products.length <= 0">
     <a class="product" v-for="(product, index) in [0,0,0,0,0,0,0,0,0,0,0]" :key="index"
       data-aos="fade-up" :data-aos-delay="index < 30 ? (index) * 100 : 100">
-      <!-- src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" -->
       <img :src="product.image" alt="image Loading" />
       <div class="bottom">
         <div class="det">
@@ -12,7 +11,7 @@
             ......
           </div>
           <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price"
-            @mouseover="$event.target.innerText = 'available: ' + product.quantity">Tk .......</div>        </div>
+            @mouseover="$event.target.innerText = 'available: ' + product.quantity">Tk .......</div></div>
         <div class="btn-con">
           <button class="cart">checkout<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path
@@ -21,7 +20,7 @@
         </div>
       </div>
     </a>
-  </div>
+  </div> -->
   <div class="products" v-else>
     <a :href="'/product/' + product._id" class="product" v-for="(product, index) in products" :key="product._id"
       @click="send(product._id)" data-aos="fade-up" :data-aos-delay="index < 30 ? (index) * 100 : 100">
