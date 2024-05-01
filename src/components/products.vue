@@ -25,7 +25,7 @@
     <a :href="'/product/' + product._id" class="product" v-for="product in products" :key="product._id"
       @click="send(product._id)" data-aos="fade-up" :data-aos-delay="100">
       <!-- src="https://images.unsplash.com/photo-1711809657132-fa38bf2ac5e7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" -->
-      <img :src="product.image || './'" alt="image not found" />
+      <img :src="product.image || '../'" alt="image not found" />
       <div class="bottom">
         <div class="det">
 
