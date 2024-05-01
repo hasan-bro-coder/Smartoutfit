@@ -62,7 +62,8 @@
       <button type="button" @click="close('edit')">Cancle</button>
     </form>
   </dialog>
-  <div class="products">
+  <div class="loader" v-if="products.length <= 0"><img src="/loader.gif" alt=""></div>
+  <div class="products" v-else>
     <div class="product" v-for="product in products" :key="product._id" @click.self="send(product._id)"
       data-aos="fade-up" data-aos-delay="100">
       <img @click.self="send(product._id)"
