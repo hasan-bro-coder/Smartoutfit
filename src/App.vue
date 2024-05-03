@@ -2,7 +2,6 @@
 import { RouterLink, RouterView } from "vue-router";
 import gsap from "gsap";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import { store } from "./store";
 let closed = true;
 export default {
@@ -63,6 +62,7 @@ export default {
 };
     if(!window.mobileCheck()){
       AOS.init();
+import("aos/dist/aos.css");
     }
     this.update()
     let tl = gsap.timeline();

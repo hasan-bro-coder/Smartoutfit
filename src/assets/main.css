@@ -57,6 +57,9 @@
       )
       rgba(255, 255, 255, 0);
 }
+html{
+  overflow-x: hidden;
+}
 body {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -106,6 +109,8 @@ body {
 #app {
   margin: 0 auto;
   font-weight: normal;
+  overflow-x: hidden;
+  position: relative;
 }
 
 a,
