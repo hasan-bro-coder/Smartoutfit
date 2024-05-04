@@ -273,36 +273,31 @@ dialog {
 .btn-con {
   width: 100%;
   display: flex;
+  justify-content: center;
   gap: 10px;
-
-  .delet {
-    height: 50px;
+  button{
+    min-width: 20px;
     width: 100%;
+  }
+  .delet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
     border-radius: 6px;
     border: 1px rgb(255, 0, 0) solid;
     background-color: rgba(255, 255, 255, 0);
     color: rgb(255, 0, 0);
     transition: 1s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     &:hover {
-      border: 1px rgba(255, 0, 0, 0) solid;
-      color: rgb(255, 255, 255) !important;
+      border: 1px rgba(255, 255, 255, 0) solid;
       background-color: rgb(255, 0, 0);
-      fill: rgb(255, 255, 255);
-    }
-
-    svg {
-      fill: white;
-      width: 20px;
-      height: 10px;
+      color: rgb(255, 255, 255);
     }
   }
 
   .cart {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -380,12 +375,12 @@ dialog {
 
     .bottom {
       width: 100%;
-      min-height: 120px;
+      max-height: 120px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-direction: column;
-      padding: 5px 5px;
+      padding: 0px 5px 5px 5px;
 
       .price,
       .quantity {
@@ -407,34 +402,34 @@ dialog {
         display: flex;
       }
 
-      .cart {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        border-radius: 6px;
-        border: 1px white solid;
-        background-color: rgba(255, 255, 255, 0);
-        color: white;
-        transition: 1s;
+      // .cart {
+      //   width: 100%;
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      //   height: 50px;
+      //   border-radius: 6px;
+      //   border: 1px white solid;
+      //   background-color: rgba(255, 255, 255, 0);
+      //   color: white;
+      //   transition: 1s;
 
-        &:hover {
-          border: 1px white solid;
-          background-color: white;
-          color: black;
-        }
+      //   &:hover {
+      //     border: 1px white solid;
+      //     background-color: white;
+      //     color: black;
+      //   }
 
-        &:hover svg {
-          fill: black
-        }
+      //   &:hover svg {
+      //     fill: black
+      //   }
 
-        svg {
-          fill: white;
-          width: 20px;
-          height: 10px;
-        }
-      }
+      //   svg {
+      //     fill: white;
+      //     width: 20px;
+      //     height: 10px;
+      //   }
+      // }
     }
 
     // aspect-ratio: 1/1;
@@ -476,7 +471,7 @@ dialog {
         object-fit: cover;
         width: 100%;
         height: 100%;
-        max-height: 280px;
+        max-height: 200px;
         aspect-ratio: 1 /1;
       }
     }
@@ -510,7 +505,7 @@ dialog {
         aspect-ratio: 1 /1;
       }
 
-      .cart {
+      button {
         height: 40px !important;
       }
     }
@@ -544,8 +539,11 @@ dialog {
         aspect-ratio: 1 /1;
       }
 
-      .cart {
+      button {
         height: 40px !important;
+        svg{
+          display: none;
+        }
       }
     }
   }
