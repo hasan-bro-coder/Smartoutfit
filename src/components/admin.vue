@@ -40,7 +40,7 @@ export default {
   gap: 30px;
   margin: 0px 100px;
   //    place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   // grid-auto-rows: 250px;
   .col {
     aspect-ratio: 1 / 1;
