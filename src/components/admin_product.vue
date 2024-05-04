@@ -47,8 +47,8 @@
         <input name="quantity" type="number" :value="form.quantity" />
       </div>
       <!-- <div> -->
-        <!-- <label for="image">uploade image</label> -->
-        <!-- <input name="image" type="file" /> -->
+      <!-- <label for="image">uploade image</label> -->
+      <!-- <input name="image" type="file" /> -->
       <!-- </div> -->
       <div>
         <label for="description">description</label>
@@ -66,9 +66,7 @@
   <div class="products" v-else>
     <div class="product" v-for="product in products" :key="product._id" @click.self="send(product._id)"
       data-aos="fade-up" data-aos-delay="100">
-      <img @click.self="send(product._id)"
-        :src="product.image"
-        alt="image not found" />
+      <img @click.self="send(product._id)" :src="product.image" alt="image not found" />
       <div class="bottom">
         <div class="det">
 
@@ -78,9 +76,9 @@
           <div class="price" @mouseleave="$event.target.innerText = `Tk ` + product.price" @mouseover="
       $event.target.innerText = 'available: ' + product.quantity
       ">
-          Tk {{ product.price }}
+            Tk {{ product.price }}
+          </div>
         </div>
-      </div>
 
         <div class="btn-con">
           <button class="cart" @click="edit(product._id)">
@@ -134,8 +132,8 @@ export default {
       this.form = data[0];
       document.querySelector("dialog.edit").showModal();
     },
-    close(val){
-      if(val == "new") document.querySelector("dialog").close();
+    close(val) {
+      if (val == "new") document.querySelector("dialog").close();
       else document.querySelector("dialog.edit").close();
     },
     async editor() {
@@ -144,7 +142,7 @@ export default {
         new FormData(document.querySelector("dialog.edit form")).entries()
       );
       document.querySelector("dialog.edit").close();
-      if(form.hasOwnProperty('image') && form.image == ""){
+      if (form.hasOwnProperty('image') && form.image == "") {
         delete form.image
         const { data, error } = await store.supabase
           .from('products')
@@ -271,6 +269,68 @@ dialog {
     }
   }
 }
+
+.btn-con {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+
+  .delet {
+    height: 50px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px rgb(255, 0, 0) solid;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 0, 0);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      border: 1px rgba(255, 0, 0, 0) solid;
+      color: rgb(255, 255, 255) !important;
+      background-color: rgb(255, 0, 0);
+      fill: rgb(255, 255, 255);
+    }
+
+    svg {
+      fill: white;
+      width: 20px;
+      height: 10px;
+    }
+  }
+
+  .cart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 6px;
+    border: 1px white solid;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    transition: 1s;
+
+    &:hover {
+      border: 1px white solid;
+      background-color: white;
+      color: black;
+    }
+
+    &:hover svg {
+      fill: black;
+    }
+
+    svg {
+      fill: white;
+      width: 20px;
+      height: 10px;
+    }
+  }
+}
+
 .loader {
   width: 100vw;
   height: 100vh;
@@ -490,6 +550,7 @@ dialog {
     }
   }
 }
+
 // .products {
 //   display: grid;
 //   // width: 50vw;
@@ -518,7 +579,7 @@ dialog {
 //       // height:85%
 //       transition: 1s;
 //     }
-    
+
 //     .bottom {
 //       width: 100%;
 //       min-height: 120px;
@@ -626,5 +687,4 @@ dialog {
 //     grid-template-columns: repeat(1, minmax(200px, 1fr));
 //     grid-auto-rows: 400px;
 //   }
-// }
-</style>
+// }</style>
