@@ -62,7 +62,7 @@ export default {
 };
     if(!window.mobileCheck()){
       AOS.init();
-import("aos/dist/aos.css");
+import("aos/dist/ aos.css");
     }
     this.update()
     let tl = gsap.timeline();
