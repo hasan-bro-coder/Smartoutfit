@@ -111,6 +111,7 @@ body {
   font-weight: normal;
   overflow-x: hidden;
   position: relative;
+  width: 100%;
 }
 
 a,
