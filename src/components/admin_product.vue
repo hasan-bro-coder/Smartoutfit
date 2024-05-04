@@ -271,12 +271,23 @@ dialog {
     }
   }
 }
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100px;
+  }
+}
 
 .products {
   display: grid;
   // width: 50vw;
   gap: 30px;
-  margin: 0px 100px;
+  margin: 100px;
   //    place-items: center;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: 400px;
@@ -289,18 +300,24 @@ dialog {
     align-items: center;
     flex-direction: column;
     border-radius: 12px;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
+    // transform: translateY(-40px) !important;
+    // background-color: rgba(54, 54, 54, 0.267);
+    // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
+
     img {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      // height:85%
+      max-height: 280px;
+      aspect-ratio: 1 /1;
       display: flex;
       justify-content: flex-start;
       // align-items: center;
       // height:85%
       transition: 1s;
     }
-    
+
     .bottom {
       width: 100%;
       min-height: 120px;
@@ -316,40 +333,18 @@ dialog {
         font-weight: 500;
         text-align: center;
       }
+
       .name {
         font-size: 20px;
         text-align: center;
+        text-overflow: clip;
+        overflow: hidden;
+        max-height: 40px;
       }
+
       .btn-con {
         width: 100%;
         display: flex;
-        gap: 10px;
-      }
-
-      .delet {
-        height: 50px;
-        width: 100%;
-        border-radius: 6px;
-        border: 1px rgb(255, 0, 0) solid;
-        background-color: rgba(255, 255, 255, 0);
-        color: rgb(255, 0, 0);
-        transition: 1s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-          border: 1px rgba(255, 0, 0, 0) solid;
-          color: rgb(255, 255, 255) !important;
-          background-color: rgb(255, 0, 0);
-          fill: rgb(255, 255, 255);
-        }
-
-        svg {
-          fill: white;
-          width: 20px;
-          height: 10px;
-        }
       }
 
       .cart {
@@ -371,7 +366,7 @@ dialog {
         }
 
         &:hover svg {
-          fill: black;
+          fill: black
         }
 
         svg {
@@ -398,15 +393,238 @@ dialog {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .products {
-    display: grid;
-    // width: 50vw;
     gap: 30px;
-    margin: 0px 10px;
-    //    place-items: center;
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
-    grid-auto-rows: 400px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-auto-rows: 300px;
+
+    .product {
+      background-color: rgb(54, 54, 54);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 12px;
+      // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
+      // transform: translateY(-40px) !important;
+      // background-color: rgba(54, 54, 54, 0.267);
+      // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: 280px;
+        aspect-ratio: 1 /1;
+      }
+    }
   }
 }
+
+@media (max-width: 370px) {
+  .products {
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-auto-rows: 250px;
+
+    .product {
+      background-color: rgb(54, 54, 54);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 12px;
+      // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
+      // transform: translateY(-40px) !important;
+      // background-color: rgba(54, 54, 54, 0.267);
+      // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: 280px;
+        aspect-ratio: 1 /1;
+      }
+
+      .cart {
+        height: 40px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .products {
+    gap: 30px;
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    grid-auto-rows: 250px;
+
+    .product {
+      background-color: rgb(54, 54, 54);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 12px;
+      // box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset,0px 0px 30px rgba(255, 255, 255, 0) ;
+      // transform: translateY(-40px) !important;
+      // background-color: rgba(54, 54, 54, 0.267);
+      // box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.575) ;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        max-height: 120px;
+        aspect-ratio: 1 /1;
+      }
+
+      .cart {
+        height: 40px !important;
+      }
+    }
+  }
+}
+// .products {
+//   display: grid;
+//   // width: 50vw;
+//   gap: 30px;
+//   margin: 0px 100px;
+//   //    place-items: center;
+//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+//   grid-auto-rows: 400px;
+
+//   .product {
+//     background-color: rgb(54, 54, 54);
+//     color: white;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     border-radius: 12px;
+//     img {
+//       object-fit: cover;
+//       width: 100%;
+//       height: 100%;
+//       // height:85%
+//       display: flex;
+//       justify-content: flex-start;
+//       // align-items: center;
+//       // height:85%
+//       transition: 1s;
+//     }
+    
+//     .bottom {
+//       width: 100%;
+//       min-height: 120px;
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       flex-direction: column;
+//       padding: 5px 5px;
+
+//       .price,
+//       .quantity {
+//         font-size: 15px;
+//         font-weight: 500;
+//         text-align: center;
+//       }
+//       .name {
+//         font-size: 20px;
+//         text-align: center;
+//       }
+//       .btn-con {
+//         width: 100%;
+//         display: flex;
+//         gap: 10px;
+//       }
+
+//       .delet {
+//         height: 50px;
+//         width: 100%;
+//         border-radius: 6px;
+//         border: 1px rgb(255, 0, 0) solid;
+//         background-color: rgba(255, 255, 255, 0);
+//         color: rgb(255, 0, 0);
+//         transition: 1s;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+
+//         &:hover {
+//           border: 1px rgba(255, 0, 0, 0) solid;
+//           color: rgb(255, 255, 255) !important;
+//           background-color: rgb(255, 0, 0);
+//           fill: rgb(255, 255, 255);
+//         }
+
+//         svg {
+//           fill: white;
+//           width: 20px;
+//           height: 10px;
+//         }
+//       }
+
+//       .cart {
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         height: 50px;
+//         border-radius: 6px;
+//         border: 1px white solid;
+//         background-color: rgba(255, 255, 255, 0);
+//         color: white;
+//         transition: 1s;
+
+//         &:hover {
+//           border: 1px white solid;
+//           background-color: white;
+//           color: black;
+//         }
+
+//         &:hover svg {
+//           fill: black;
+//         }
+
+//         svg {
+//           fill: white;
+//           width: 20px;
+//           height: 10px;
+//         }
+//       }
+//     }
+
+//     // aspect-ratio: 1/1;
+//   }
+// }
+
+// @media (max-width: 750px) {
+//   .products {
+//     display: grid;
+//     // width: 50vw;
+//     gap: 30px;
+//     margin: 0px 25px;
+//     //    place-items: center;
+//     grid-template-columns: repeat(2, minmax(220px, 1fr));
+//     grid-auto-rows: 400px;
+//   }
+// }
+
+// @media (max-width: 450px) {
+//   .products {
+//     display: grid;
+//     // width: 50vw;
+//     gap: 30px;
+//     margin: 0px 10px;
+//     //    place-items: center;
+//     grid-template-columns: repeat(1, minmax(200px, 1fr));
+//     grid-auto-rows: 400px;
+//   }
+// }
 </style>
