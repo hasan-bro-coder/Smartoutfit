@@ -224,7 +224,7 @@ export default {
 
 @media (max-width: 370px) {
   .products {
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: repeat(2, minmax(100px, 1fr));
     grid-auto-rows: 250px;
 
@@ -258,7 +258,7 @@ export default {
 
 @media (max-width: 300px) {
   .products {
-    gap: 10px;
+    gap: 30px;
     grid-template-columns: repeat(1, minmax(100px, 1fr));
     grid-auto-rows: 250px;
 
@@ -279,7 +279,7 @@ export default {
         object-fit: cover;
         width: 100%;
         height: 100%;
-        max-height: 280px;
+        max-height: 120px;
         aspect-ratio: 1 /1;
       }
 
