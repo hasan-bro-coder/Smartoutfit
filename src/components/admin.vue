@@ -40,9 +40,10 @@ export default {
   gap: 30px;
   margin: 0px 100px;
   //    place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-auto-rows: 250px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  // grid-auto-rows: 250px;
   .col {
+    aspect-ratio: 1 / 1;
     background-color: rgb(54, 54, 54);
     border: 1px color white;
     border-radius: 12px;
